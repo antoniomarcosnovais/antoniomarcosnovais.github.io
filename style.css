@@ -2350,3 +2350,439 @@ body:has(#projetos) .projeto h3 {
     }
 }
 
+
+/* =========================================================
+   RESPONSIVIDADE FINAL — CELULAR
+   Não altera o layout do desktop
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    /* CABEÇALHO */
+    header {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        transform: none !important;
+    }
+
+    .imagem-cabecalho {
+        width: 100% !important;
+        height: 180px !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .imagem-cabecalho img {
+        width: 100% !important;
+        height: 180px !important;
+        object-fit: cover !important;
+        transform: none !important;
+    }
+
+    .autor {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 12px 8px !important;
+        box-sizing: border-box !important;
+        background: rgba(0,0,0,0.45) !important;
+    }
+
+    .autor h1 {
+        font-size: 22px !important;
+        line-height: 1.2 !important;
+        margin: 0 0 6px !important;
+    }
+
+    .autor p {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+    }
+
+    .aviso-autoria {
+        font-size: 10px !important;
+        line-height: 1.3 !important;
+    }
+
+    /* MENU */
+    header nav {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 4px !important;
+        margin: 0 !important;
+        padding: 8px 5px !important;
+        box-sizing: border-box !important;
+    }
+
+    header nav a {
+        display: inline-block !important;
+        margin: 2px !important;
+        padding: 6px 8px !important;
+        font-size: 12px !important;
+    }
+
+    /* CONTATO */
+    header #redes-sociais {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        left: auto !important;
+        grid-column: auto !important;
+        grid-row: auto !important;
+        width: calc(100% - 20px) !important;
+        max-width: 360px !important;
+        margin: 8px auto !important;
+        padding: 7px !important;
+        transform: none !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+    }
+
+    header #redes-sociais h2 {
+        font-size: 14px !important;
+        margin: 2px 0 5px !important;
+    }
+
+    header #redes-sociais a {
+        display: inline-block !important;
+        font-size: 11px !important;
+        margin: 3px 5px !important;
+    }
+
+    /* CONTEÚDO PRINCIPAL */
+    main {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 8px !important;
+        box-sizing: border-box !important;
+        transform: none !important;
+    }
+
+    #inicio,
+    #musicas,
+    #poesias,
+    #siavon-system {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+    }
+
+    /* MÚSICAS — 2 COLUNAS NO CELULAR */
+    #musicas {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        padding: 10px !important;
+        margin-top: 10px !important;
+    }
+
+    #musicas > .musica-card {
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 8px !important;
+        box-sizing: border-box !important;
+        transform: none !important;
+    }
+
+    #musicas .musica-card h3 {
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+    }
+
+    #musicas .autor-musica {
+        font-size: 9px !important;
+    }
+
+    #musicas audio {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #musicas .musica-card button {
+        font-size: 10px !important;
+        padding: 5px 7px !important;
+    }
+
+    /* POESIAS */
+    #poesias {
+        padding: 12px !important;
+        margin-top: 12px !important;
+    }
+
+    /* SIAVON */
+    #siavon-system {
+        margin-top: 15px !important;
+        padding: 8px !important;
+    }
+
+    #siavon-system img {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        margin: 0 auto !important;
+        transform: none !important;
+    }
+
+    /* RODAPÉ */
+    footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 15px 0 0 !important;
+        padding: 12px 8px !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        font-size: 12px !important;
+    }
+}
+
+/* CELULARES MUITO PEQUENOS */
+@media (max-width: 420px) {
+
+    #musicas {
+        grid-template-columns: 1fr !important;
+    }
+
+    .autor h1 {
+        font-size: 19px !important;
+    }
+
+    header nav a {
+        font-size: 11px !important;
+        padding: 5px 6px !important;
+    }
+}
+
+
+@media (max-width: 700px) {
+    header nav {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+    }
+
+    header nav a {
+        position: static !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex: 0 0 auto !important;
+        margin: 0 !important;
+        padding: 7px 9px !important;
+        white-space: nowrap !important;
+        line-height: 1.2 !important;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    #musicas {
+        width: 100% !important;
+        max-width: 100% !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        padding: 8px !important;
+    }
+
+    #musicas > .musica-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        padding: 7px !important;
+        margin: 0 !important;
+    }
+
+    #musicas .musica-card h3 {
+        font-size: 11px !important;
+        line-height: 1.15 !important;
+        margin: 2px 0 !important;
+    }
+
+    #musicas .autor-musica {
+        font-size: 8px !important;
+        margin: 2px 0 !important;
+    }
+
+    #musicas audio {
+        width: 100% !important;
+        height: 32px !important;
+    }
+
+    #musicas .musica-card button {
+        font-size: 9px !important;
+        padding: 4px 6px !important;
+        margin: 2px !important;
+    }
+}
+
+@media (max-width: 380px) {
+
+    #musicas {
+        gap: 6px !important;
+        padding: 6px !important;
+    }
+
+    #musicas > .musica-card {
+        padding: 5px !important;
+    }
+
+    #musicas .musica-card h3 {
+        font-size: 10px !important;
+    }
+
+    #musicas audio {
+        height: 30px !important;
+    }
+}
+
+
+@media (max-width: 700px) {
+    #musicas {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 8px !important;
+        padding: 8px !important;
+        margin: 0 !important;
+        transform: none !important;
+    }
+
+    #musicas > .musica-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        padding: 6px !important;
+        margin: 0 !important;
+        transform: none !important;
+        overflow: hidden !important;
+    }
+
+    #musicas > .musica-card h3 {
+        font-size: 11px !important;
+        line-height: 1.15 !important;
+        margin: 2px 0 !important;
+    }
+
+    #musicas > .musica-card .autor-musica {
+        font-size: 8px !important;
+        line-height: 1.1 !important;
+        margin: 2px 0 !important;
+    }
+
+    #musicas > .musica-card audio {
+        display: block !important;
+        width: 100% !important;
+        height: 32px !important;
+        margin: 4px 0 !important;
+    }
+
+    #musicas > .musica-card button {
+        font-size: 9px !important;
+        padding: 4px 6px !important;
+        margin: 2px auto !important;
+    }
+}
+
+
+@media (max-width: 700px) {
+    header .autor h1 {
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: 17px !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        letter-spacing: 0 !important;
+        margin: 0 auto 6px !important;
+    }
+}
+
+
+@media (max-width: 700px) {
+    header .autor {
+        position: relative !important;
+        display: block !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 12px 4px !important;
+        margin: 0 !important;
+        left: 0 !important;
+        top: 0 !important;
+        overflow: visible !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+    }
+
+    header .autor h1 {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 auto 6px !important;
+        padding: 0 !important;
+        font-size: 16px !important;
+        line-height: 1.25 !important;
+        letter-spacing: 0 !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        box-sizing: border-box !important;
+    }
+}
+
+
+@media (max-width: 700px) {
+    header .autor h1 {
+        font-size: 12px !important;
+        line-height: 1.1 !important;
+        letter-spacing: 0 !important;
+        white-space: nowrap !important;
+    }
+}
+
