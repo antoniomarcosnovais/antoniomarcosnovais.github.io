@@ -1,0 +1,1889 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f1ea;
+    color: #222;
+}
+
+/* CABEÇALHO */
+header {
+    background: linear-gradient(135deg, #111111, #292929);
+    color: white;
+    text-align: center;
+    padding-top: 45px;
+}
+
+/* IMAGEM DO CABEÇALHO */
+.imagem-cabecalho {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.imagem-cabecalho img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.autor .titulo-pequeno {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 7px;
+    margin-bottom: 10px;
+}
+
+.autor h1 {
+    font-size: 42px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.autor p {
+    font-size: 18px;
+    letter-spacing: 2px;
+    opacity: 0.85;
+}
+
+/* MENU */
+nav {
+    margin-top: 35px;
+    padding: 20px;
+    border-top: 1px solid #444;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+/* CONTEÚDO */
+main {
+    max-width: 1100px;
+    margin: auto;
+}
+
+section {
+    padding: 80px 30px;
+    text-align: center;
+}
+
+/* INÍCIO */
+.hero {
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 700px;
+    font-size: 21px;
+    line-height: 1.8;
+}
+
+/* TÍTULOS */
+section h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* CARTÕES */
+#musicas,
+#poesias {
+    background: white;
+    margin: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+#musicas h2 {
+    color: #7a5c00;
+}
+
+#poesias h2 {
+    color: #7a5c00;
+}
+
+/* SOBRE E CONTATO */
+#sobre,
+#contato {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+/* RODAPÉ */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+/* CELULAR */
+@media (max-width: 700px) {
+
+    header {
+        padding-top: 30px;
+    }
+
+    .autor h1 {
+        font-size: 27px;
+        letter-spacing: 1px;
+    }
+
+    .autor .titulo-pequeno {
+        font-size: 15px;
+        letter-spacing: 5px;
+    }
+
+    .autor p {
+        font-size: 14px;
+    }
+
+    nav {
+        padding: 15px 5px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+        font-size: 13px;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+}
+
+.card {
+    background: #ffffff;
+    max-width: 750px;
+    margin: 25px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.autor-musica {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.card button {
+    background: #7a5c00;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    opacity: 0.85;
+}
+
+.letra {
+    display: none;
+    margin-top: 25px;
+    padding: 25px;
+    background: #f4f1ea;
+    border-radius: 10px;
+    line-height: 1.9;
+}
+
+
+/* ÁREA DE MÚSICAS E POESIAS - PRETO E DOURADO */
+
+#musicas,
+#poesias {
+    background: #111111;
+    color: #ffffff;
+    margin: 35px 20px;
+    padding: 60px 30px;
+    border: 1px solid #b8962e;
+    border-radius: 18px;
+}
+
+#musicas h2,
+#poesias h2 {
+    color: #d4af37;
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+#musicas .card,
+#poesias .card {
+    background: #1c1c1c;
+    color: #ffffff;
+    border: 1px solid #b8962e;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+#musicas .card h3,
+#poesias .card h3 {
+    color: #d4af37;
+}
+
+#musicas .autor-musica {
+    color: #cccccc;
+}
+
+#musicas .card button {
+    background: #d4af37;
+    color: #111111;
+    font-weight: bold;
+}
+
+#musicas .card button:hover {
+    background: #f0d36b;
+}
+
+.letra {
+    background: #111111;
+    border: 1px solid #8f7422;
+    color: #f5f5f5;
+}
+
+
+/* CONTATO E REDES SOCIAIS */
+
+#contato {
+    background: #111111;
+    color: white;
+    margin: 35px 20px;
+    border: 1px solid #b8962e;
+    border-radius: 18px;
+}
+
+#contato h2 {
+    color: #d4af37;
+}
+
+.redes {
+    max-width: 850px;
+    margin: 35px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.rede {
+    text-decoration: none;
+    color: white;
+    background: #1c1c1c;
+    border: 1px solid #8f7422;
+    border-radius: 12px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    transition: 0.3s;
+}
+
+.rede:hover {
+    transform: translateY(-4px);
+    border-color: #d4af37;
+    box-shadow: 0 8px 20px rgba(212,175,55,0.18);
+}
+
+.rede span {
+    font-size: 30px;
+}
+
+.rede strong {
+    color: #d4af37;
+    font-size: 19px;
+}
+
+.rede small {
+    color: #cccccc;
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
+    .redes {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===== ÁREA DE MÚSICAS ===== */
+
+#musicas {
+    background: #000;
+    padding: 60px 6%;
+}
+
+#musicas h2 {
+    text-align: center;
+    color: #d4af37;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+#musicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+#musicas h2 {
+    grid-column: 1 / -1;
+}
+
+.musica-card {
+    background: #151515;
+    border: 1px solid #d4af37;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.musica-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.18);
+}
+
+.musica-card h3 {
+    color: #d4af37;
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.autor-musica {
+    color: #ddd;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.musica-card audio {
+    width: 100%;
+    margin: 10px 0 20px;
+}
+
+.musica-card button {
+    background: #d4af37;
+    color: #000;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.musica-card button:hover {
+    background: #f0cf62;
+}
+
+@media (max-width: 600px) {
+    #musicas {
+        padding: 40px 20px;
+    }
+
+    #musicas h2 {
+        font-size: 27px;
+    }
+}
+
+
+/* ===== CARTÕES DE MÚSICA COMPACTOS ===== */
+
+#musicas {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    padding: 45px 4%;
+}
+
+.musica-card {
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.musica-card h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.autor-musica {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.musica-card audio {
+    width: 100%;
+    margin: 5px 0 12px;
+}
+
+.musica-card button {
+    padding: 7px 12px;
+    font-size: 12px;
+}
+
+@media (max-width: 900px) {
+    #musicas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    #musicas {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===== PLAYLIST DE MÚSICAS ===== */
+
+#musicas {
+    display: block;
+    background: #000;
+    padding: 50px 8%;
+}
+
+#musicas h2 {
+    text-align: center;
+    color: #d4af37;
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+.musica-card {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 10px;
+    padding: 14px 20px;
+    background: #111;
+    border: 1px solid #3d3215;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.musica-card:hover {
+    transform: none;
+    border-color: #d4af37;
+}
+
+.musica-card h3 {
+    display: inline-block;
+    color: #d4af37;
+    font-size: 17px;
+    margin: 0 10px 0 0;
+}
+
+.musica-card .autor-musica {
+    display: inline-block;
+    color: #888;
+    font-size: 12px;
+    margin: 0;
+}
+
+.musica-card audio {
+    display: block;
+    width: 100%;
+    margin: 10px 0 8px;
+    height: 38px;
+}
+
+.musica-card button {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.contador-musica {
+    display: inline-block;
+    margin-left: 12px;
+    color: #aaa;
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    #musicas {
+        padding: 35px 15px;
+    }
+
+    .musica-card {
+        padding: 12px;
+    }
+}
+
+
+/* ===== 4 MÚSICAS POR LINHA ===== */
+
+#musicas {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.musica-card {
+    padding: 12px;
+}
+
+.musica-card h3 {
+    font-size: 15px;
+}
+
+.musica-card audio {
+    width: 100%;
+}
+
+@media (max-width: 1000px) {
+    #musicas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
+    #musicas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    #musicas {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===== FORÇAR PLAYLIST EM 4 COLUNAS ===== */
+
+#musicas {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+}
+
+#musicas > .musica-card {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+}
+
+#musicas > h2 {
+    grid-column: 1 / -1 !important;
+}
+
+@media (max-width: 900px) {
+    #musicas {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 700px) {
+    #musicas {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #musicas {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+/* ===== CARTÕES AINDA MAIS COMPACTOS ===== */
+
+#musicas {
+    gap: 8px !important;
+    padding-left: 6% !important;
+    padding-right: 6% !important;
+}
+
+#musicas > .musica-card {
+    padding: 8px !important;
+    border-radius: 6px !important;
+}
+
+.musica-card h3 {
+    font-size: 13px !important;
+    margin-bottom: 3px !important;
+}
+
+.musica-card .autor-musica {
+    font-size: 9px !important;
+    margin-bottom: 4px !important;
+}
+
+.musica-card audio {
+    height: 30px !important;
+    margin: 4px 0 !important;
+}
+
+.musica-card button {
+    font-size: 9px !important;
+    padding: 4px 7px !important;
+}
+
+.musica-card .contador-musica {
+    font-size: 9px !important;
+    margin: 3px 0 !important;
+}
+
+
+/* ===== CARTÕES MINI ===== */
+
+#musicas {
+    gap: 6px !important;
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+}
+
+#musicas > .musica-card {
+    padding: 6px !important;
+    border-radius: 5px !important;
+}
+
+.musica-card h3 {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+}
+
+.musica-card .autor-musica {
+    font-size: 8px !important;
+    margin-bottom: 2px !important;
+}
+
+.musica-card audio {
+    height: 26px !important;
+    margin: 2px 0 !important;
+}
+
+.musica-card button {
+    font-size: 8px !important;
+    padding: 3px 5px !important;
+}
+
+.musica-card .contador-musica {
+    font-size: 8px !important;
+    margin: 2px 0 !important;
+}
+
+
+/* ===== LOGO NOS CARTÕES DE MÚSICA ===== */
+
+.musica-card {
+    text-align: center;
+}
+
+.logo-musica {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    margin: 0 auto 4px;
+    display: block;
+}
+
+
+/* ===== CARTÕES SUPER COMPACTOS ===== */
+
+#musicas {
+    gap: 5px !important;
+    padding-left: 12% !important;
+    padding-right: 12% !important;
+}
+
+#musicas > .musica-card {
+    padding: 5px !important;
+    min-width: 0 !important;
+}
+
+.logo-musica {
+    width: 32px !important;
+    height: 32px !important;
+    margin-bottom: 2px !important;
+}
+
+.musica-card h3 {
+    font-size: 11px !important;
+    margin: 2px 0 !important;
+}
+
+.musica-card .autor-musica {
+    font-size: 7px !important;
+    margin: 1px 0 !important;
+}
+
+.musica-card audio {
+    height: 24px !important;
+    margin: 2px 0 !important;
+}
+
+.musica-card button {
+    font-size: 7px !important;
+    padding: 2px 4px !important;
+}
+
+.musica-card .contador-musica {
+    font-size: 7px !important;
+    margin: 1px 0 !important;
+}
+
+
+/* ===== ÁREA MINHAS MÚSICAS MAIS COMPACTA ===== */
+
+#musicas {
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+}
+
+#musicas h2 {
+    font-size: 22px !important;
+    margin-bottom: 15px !important;
+}
+
+
+/* ===== TAMANHO FINAL DOS CARTÕES ===== */
+
+#musicas {
+    display: grid !important;
+    grid-template-columns: repeat(4, 180px) !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 20px 10px !important;
+}
+
+#musicas h2 {
+    grid-column: 1 / -1 !important;
+    margin: 0 0 10px 0 !important;
+    font-size: 22px !important;
+}
+
+#musicas .musica-card {
+    width: 180px !important;
+    min-height: 0 !important;
+    padding: 6px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+#musicas .logo-musica {
+    width: 28px !important;
+    height: 28px !important;
+    margin: 0 auto 2px !important;
+}
+
+#musicas .musica-card h3 {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    margin: 2px 0 !important;
+}
+
+#musicas .autor-musica {
+    font-size: 7px !important;
+    margin: 1px 0 !important;
+}
+
+#musicas audio {
+    width: 100% !important;
+    height: 25px !important;
+    margin: 2px 0 !important;
+}
+
+#musicas .musica-card button {
+    font-size: 8px !important;
+    padding: 3px 5px !important;
+}
+
+#musicas .contador-musica {
+    font-size: 7px !important;
+    margin: 1px 0 !important;
+}
+
+
+/* ===== AJUSTE DEFINITIVO - QUADRO MINHAS MÚSICAS ===== */
+
+#musicas {
+    width: 650px !important;
+    max-width: calc(100% - 20px) !important;
+    margin: 20px auto !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(4, 145px) !important;
+    justify-content: center !important;
+    gap: 6px !important;
+}
+
+#musicas h2 {
+    grid-column: 1 / -1 !important;
+    font-size: 22px !important;
+    margin: 0 0 8px !important;
+    padding: 0 !important;
+}
+
+#musicas .musica-card {
+    width: 145px !important;
+    max-width: 145px !important;
+    margin: 0 !important;
+    padding: 5px !important;
+    border-radius: 7px !important;
+    box-sizing: border-box !important;
+}
+
+#musicas .logo-musica {
+    width: 26px !important;
+    height: 26px !important;
+}
+
+#musicas .musica-card h3 {
+    font-size: 10px !important;
+    margin: 2px 0 !important;
+}
+
+#musicas .autor-musica {
+    font-size: 7px !important;
+    margin: 1px 0 !important;
+}
+
+#musicas audio {
+    width: 100% !important;
+    height: 24px !important;
+    margin: 2px 0 !important;
+}
+
+#musicas .contador-musica {
+    font-size: 7px !important;
+    margin: 1px 0 !important;
+}
+
+#musicas .musica-card button {
+    font-size: 7px !important;
+    padding: 2px 4px !important;
+    margin-top: 2px !important;
+}
+
+
+/* ===== MÚSICAS - 2 COLUNAS ===== */
+#musicas {
+    width: 650px !important;
+    max-width: calc(100% - 30px) !important;
+    margin: 20px auto !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+}
+
+#musicas > h2 {
+    grid-column: 1 / -1 !important;
+    text-align: center !important;
+    font-size: 22px !important;
+    margin: 0 0 10px !important;
+}
+
+#musicas > .musica-card {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+}
+
+#musicas {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+}
+
+
+#musicas > .musica-card {
+    width: 100% !important;
+    height: 3cm !important;
+    min-height: 3cm !important;
+    max-height: 3cm !important;
+    padding: 5px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+#musicas {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+#musicas .logo-musica {
+    width: 22px !important;
+    height: 22px !important;
+}
+
+#musicas .musica-card h3 {
+    font-size: 11px !important;
+    margin: 2px 0 !important;
+}
+
+#musicas .autor-musica {
+    font-size: 9px !important;
+    margin: 2px 0 !important;
+}
+
+#musicas audio {
+    width: 100% !important;
+    height: 28px !important;
+}
+
+#musicas .musica-card button {
+    font-size: 9px !important;
+    padding: 3px 6px !important;
+}
+
+
+#musicas > .musica-card {
+    width: 4cm !important;
+    max-width: 4cm !important;
+    height: 2.5cm !important;
+    min-height: 2.5cm !important;
+    max-height: 2.5cm !important;
+    padding: 3px !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+#musicas {
+    grid-template-columns: repeat(2, 4cm) !important;
+    justify-content: center !important;
+    gap: 6px !important;
+}
+
+#musicas .logo-musica {
+    width: 18px !important;
+    height: 18px !important;
+}
+
+#musicas .musica-card h3 {
+    font-size: 9px !important;
+    margin: 1px 0 !important;
+}
+
+#musicas .autor-musica {
+    font-size: 7px !important;
+    margin: 1px 0 !important;
+}
+
+#musicas audio {
+    width: 100% !important;
+    height: 20px !important;
+}
+
+#musicas .musica-card button {
+    font-size: 7px !important;
+    padding: 2px 4px !important;
+}
+
+
+#musicas > .musica-card {
+    width: 3cm !important;
+    max-width: 3cm !important;
+    height: 2cm !important;
+    min-height: 2cm !important;
+    max-height: 2cm !important;
+    padding: 2px !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+#musicas {
+    grid-template-columns: repeat(2, 3cm) !important;
+    justify-content: center !important;
+    gap: 4px !important;
+}
+
+#musicas .logo-musica {
+    width: 14px !important;
+    height: 14px !important;
+}
+
+#musicas .musica-card h3 {
+    font-size: 8px !important;
+    margin: 0 !important;
+}
+
+#musicas .autor-musica {
+    font-size: 6px !important;
+    margin: 0 !important;
+}
+
+#musicas audio {
+    width: 100% !important;
+    height: 16px !important;
+}
+
+#musicas .musica-card button {
+    font-size: 6px !important;
+    padding: 1px 3px !important;
+}
+
+
+/* QUADRO DE MÚSICAS NO CANTO ESQUERDO */
+#musicas {
+    margin-left: 15px !important;
+    margin-right: auto !important;
+}
+
+
+header {
+    padding-top: 20px !important;
+    padding-bottom: 10px !important;
+}
+
+header h1 {
+    margin-top: 0 !important;
+    margin-bottom: 5px !important;
+}
+
+header p {
+    margin-top: 0 !important;
+}
+
+
+header {
+    transform: translateY(-35px) !important;
+}
+
+
+#inicio {
+    transform: translateY(-80px) !important;
+}
+
+
+#inicio {
+    transform: translateY(-180px) !important;
+}
+
+
+#musicas {
+    transform: translateY(-6cm) !important;
+}
+
+
+#musicas {
+    background: transparent !important;
+}
+
+
+#musicas > .musica-card {
+    width: 4cm !important;
+    max-width: 4cm !important;
+    height: 2.5cm !important;
+    min-height: 2.5cm !important;
+    max-height: 2.5cm !important;
+}
+
+#musicas {
+    grid-template-columns: repeat(2, 4cm) !important;
+    justify-content: center !important;
+}
+
+
+#musicas {
+    grid-template-columns: 4cm 4cm !important;
+    column-gap: 12px !important;
+    row-gap: 10px !important;
+}
+
+#musicas > .musica-card {
+    width: 4cm !important;
+    max-width: 4cm !important;
+    height: 2.5cm !important;
+    min-height: 2.5cm !important;
+    max-height: 2.5cm !important;
+    padding: 5px !important;
+    overflow: hidden !important;
+}
+
+#musicas .logo-musica {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+#musicas .musica-card h3 {
+    font-size: 10px !important;
+}
+
+#musicas .autor-musica {
+    font-size: 8px !important;
+}
+
+#musicas audio {
+    width: 100% !important;
+    height: 22px !important;
+}
+
+#musicas .musica-card button {
+    font-size: 8px !important;
+    padding: 3px 5px !important;
+}
+
+
+#musicas {
+    justify-content: start !important;
+}
+
+
+
+.imagem-cabecalho img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+
+/* CABEÇALHO COM IMAGEM */
+header {
+    position: relative;
+    padding-top: 0 !important;
+    overflow: hidden;
+}
+
+.imagem-cabecalho {
+    width: 100%;
+    height: 360px;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+
+.imagem-cabecalho img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.autor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.30);
+}
+
+.autor .titulo-pequeno,
+.autor h1,
+.autor p {
+    color: white;
+}
+
+.autor h1 {
+    margin-top: 10px;
+}
+
+nav {
+    position: relative;
+    z-index: 3;
+    margin-top: 0 !important;
+}
+
+
+/* AJUSTE FINAL DA IMAGEM DO CABEÇALHO */
+.imagem-cabecalho {
+    width: 100% !important;
+    height: 300px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+}
+
+.imagem-cabecalho img {
+    width: 100% !important;
+    height: 300px !important;
+    max-width: none !important;
+    border-radius: 0 !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* AJUSTE FINAL - MÚSICAS */
+#musicas {
+    transform: translateY(-9cm) !important;
+}
+
+#musicas > .musica-card {
+    width: 3.5cm !important;
+    max-width: 3.5cm !important;
+    height: 2.2cm !important;
+    min-height: 2.2cm !important;
+    max-height: 2.2cm !important;
+}
+
+/* AJUSTE - MINHAS POESIAS */
+#poesias {
+    transform: translateY(-6cm) !important;
+}
+
+/* ORGANIZAÇÃO FINAL DA TELA */
+#musicas,
+#poesias {
+    transform: none !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+#musicas {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+#poesias {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+/* MÚSICAS - VOLTAR À POSIÇÃO APROVADA */
+#musicas {
+    transform: translateY(-9cm) !important;
+}
+
+/* MINHAS POESIAS - SUBIR 10 LINHAS */
+#poesias {
+    transform: translateY(-3cm) !important;
+}
+
+/* ==================================================
+   AJUSTE GERAL - TODA A PÁGINA EM UMA TELA
+   ================================================== */
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* REMOVE OS DESLOCAMENTOS ARTIFICIAIS */
+#inicio,
+#musicas,
+#poesias {
+    transform: none !important;
+}
+
+/* CABEÇALHO COMPACTO */
+.imagem-cabecalho {
+    height: 230px !important;
+}
+
+.imagem-cabecalho img {
+    height: 230px !important;
+}
+
+.autor {
+    height: 230px !important;
+}
+
+/* NAVEGAÇÃO */
+nav {
+    padding: 5px 0 !important;
+    margin: 0 !important;
+}
+
+/* INÍCIO */
+#inicio {
+    padding: 10px 20px !important;
+    margin: 5px 15px !important;
+}
+
+#inicio h2 {
+    margin: 5px 0 !important;
+}
+
+#inicio p {
+    margin: 3px 0 !important;
+}
+
+/* MÚSICAS */
+#musicas {
+    width: auto !important;
+    max-width: none !important;
+    margin: 5px 15px !important;
+    padding: 8px !important;
+    grid-template-columns: repeat(4, 3.5cm) !important;
+    justify-content: start !important;
+    gap: 5px !important;
+}
+
+#musicas h2 {
+    margin: 0 0 5px 0 !important;
+    font-size: 20px !important;
+}
+
+#musicas > .musica-card {
+    width: 3.5cm !important;
+    max-width: 3.5cm !important;
+    height: 2.2cm !important;
+    min-height: 2.2cm !important;
+    max-height: 2.2cm !important;
+    padding: 3px !important;
+}
+
+/* POESIAS */
+#poesias {
+    margin: 5px 15px !important;
+    padding: 8px !important;
+}
+
+#poesias h2 {
+    margin: 0 0 5px 0 !important;
+    font-size: 20px !important;
+}
+
+
+/* TAMANHO DO QUADRO CONTATO */
+#contato {
+    width: 650px !important;
+    margin-left: 20px !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* CARTÕES DAS REDES SOCIAIS - BEM PEQUENOS */
+#contato .redes {
+    max-width: 420px !important;
+    grid-template-columns: repeat(2, 180px) !important;
+    gap: 6px !important;
+    margin: 8px 0 !important;
+}
+
+#contato .rede {
+    padding: 6px !important;
+    min-height: 0 !important;
+    height: 45px !important;
+    box-sizing: border-box !important;
+}
+
+/* REDES SOCIAIS - PEQUENAS E EM UMA LINHA */
+#contato .redes {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 5px !important;
+    width: max-content !important;
+    max-width: none !important;
+    margin: 8px 0 !important;
+}
+
+#contato .rede {
+    width: 110px !important;
+    height: 35px !important;
+    min-height: 35px !important;
+    padding: 4px !important;
+    box-sizing: border-box !important;
+    font-size: 11px !important;
+}
+
+/* CONTATO - 5 CARTÕES PEQUENOS EM UMA ÚNICA LINHA */
+#contato .redes {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+    margin: 8px 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+}
+
+#contato .rede {
+    flex: 1 1 0 !important;
+    width: auto !important;
+    height: 55px !important;
+    padding: 4px !important;
+    margin: 0 !important;
+    border-radius: 6px !important;
+    gap: 2px !important;
+}
+
+#contato .rede span {
+    font-size: 18px !important;
+}
+
+#contato .rede strong {
+    font-size: 11px !important;
+}
+
+#contato .rede small {
+    font-size: 8px !important;
+}
+
+/* CENTRALIZAR CARTÕES DE CONTATO */
+#contato .redes {
+    justify-content: center !important;
+}
+
+/* CENTRALIZAR CARTÕES DE CONTATO */
+#contato .redes {
+    justify-content: center !important;
+}
+
+/* CONTATO - SEM CARTÕES */
+#contato .redes {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 3px !important;
+    width: 100% !important;
+    margin: 10px auto !important;
+}
+
+#contato .rede {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 2px !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+#contato .rede:hover {
+    transform: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#contato .rede span {
+    font-size: 18px !important;
+}
+
+#contato .rede strong {
+    font-size: 13px !important;
+}
+
+#contato .rede small {
+    font-size: 12px !important;
+}
+
+/* REMOVER TODAS AS BORDAS DOURADAS */
+* {
+    border-color: transparent !important;
+}
+
+
+/* DIMINUIR LARGURA DO RODAPÉ */
+footer {
+    width: 700px !important;
+    margin: 15px auto !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+}
+
+/* IMAGEM PRINCIPAL DO TOPO */
+header .imagem-cabecalho {
+    display: block !important;
+    width: 100% !important;
+    height: 230px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+header .imagem-cabecalho img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    height: 230px !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+}
+
+/* REDES SOCIAIS À DIREITA DAS MÚSICAS */
+main {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 180px !important;
+    gap: 15px !important;
+    align-items: start !important;
+}
+
+#redes-sociais {
+    width: 180px !important;
+    box-sizing: border-box !important;
+    padding: 12px !important;
+    background: #111 !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+}
+
+#redes-sociais h2 {
+    font-size: 16px !important;
+    margin: 0 0 10px !important;
+}
+
+#redes-sociais a {
+    display: block !important;
+    padding: 8px 4px !important;
+    margin: 4px 0 !important;
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 12px !important;
+    background: #222 !important;
+    border-radius: 5px !important;
+}
+
+#redes-sociais a:hover {
+    background: #333 !important;
+}
+
+
+/* TÍTULO CONTATO VISÍVEL */
+#redes-sociais h2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: white !important;
+    height: auto !important;
+    line-height: 22px !important;
+    margin: 0 0 10px 0 !important;
+    padding: 4px !important;
+    position: static !important;
+}
+
+
+/* AUMENTAR CARTÕES DAS MÚSICAS ATÉ O QUADRO DE CONTATO */
+#musicas > .musica-card {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+}
+
+
+/* IMAGEM DE FUNDO DO SITE */
+body {
+    background-image: url("ism2.jpeg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+}
+
+
+/* FUNDO DEFINITIVO */
+html, body {
+    min-height: 100% !important;
+}
+
+body {
+    background: url("ism2.jpeg") center center / cover fixed no-repeat !important;
+}
+
+
+/* DEIXAR O FUNDO DA PÁGINA VISÍVEL */
+main {
+    background: transparent !important;
+}
+
+
+
+
+
+
+/* FUNDO DAS MÚSICAS TRANSPARENTE */
+#musicas {
+    background: transparent !important;
+}
+
+
+/* QUADRO DAS LETRAS */
+.letra-musica {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 8px;
+    text-align: left;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+
+/* CORREÇÃO DO FUNDO */
+html {
+    background: url("ism2.jpeg") center center / cover fixed no-repeat !important;
+}
+
+body {
+    background: url("ism2.jpeg") center center / cover fixed no-repeat !important;
+}
+
+/* CAMPO PARA DIGITAR A LETRA */
+#letra-amor-errado textarea {
+    width: 100%;
+    min-height: 250px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+/* FUNDO - NÃO ALTERAR OUTRAS ÁREAS */
+html, body {
+    background-image: url("ism2.jpeg") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
+
+/* TÍTULO DAS LETRAS - AMARELO GEMA */
+#letras h2 {
+    color: #d4af37 !important;
+}
+
+/* NOME DO AUTOR - MENOR */
+.autor h1 {
+    font-size: 28px !important;
+}
+
+/* AVISO DE AUTORIA NO TOPO */
+.autor .aviso-autoria {
+    color: #d4af37 !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 11px !important;
+    font-weight: bold !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.3px !important;
+    margin-top: 8px !important;
+    padding: 0 15px !important;
+    text-align: center !important;
+}
+
+.autor .aviso-autoria {
+    font-size: 14px !important;
+}
+
+.autor .aviso-autoria {
+    color: #d4af37 !important;
+    font-size: 14px !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-weight: bold !important;
+    line-height: 1.5 !important;
+}
+
+.autor .aviso-autoria strong {
+    color: white !important;
+    font-size: 15px !important;
+    font-weight: 900 !important;
+}
+
+/* ESPAÇO ENTRE AS FRASES DE AUTORIA */
+.autor .aviso-autoria strong {
+    display: block !important;
+    margin-top: 18px !important;
+}
+
+/* CARTÕES DAS MÚSICAS TRANSPARENTES */
+#musicas > .musica-card {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* CARTÕES DAS MÚSICAS - TRANSPARÊNCIA SUAVE */
+#musicas > .musica-card {
+    background: rgba(0, 0, 0, 0.55) !important;
+    box-shadow: none !important;
+}
+
+/* ACABAMENTO DOS CARTÕES MUSICAIS */
+#musicas > .musica-card {
+    border-radius: 10px !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* TÍTULO DAS MÚSICAS */
+#musicas .musica-card h3 {
+    color: #d4af37 !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+}
+
+/* AUTOR DAS MÚSICAS */
+#musicas .autor-musica {
+    color: white !important;
+    font-size: 8px !important;
+    text-align: center !important;
+    opacity: 0.85 !important;
+    margin: 2px 0 !important;
+}
+
+/* BOTÃO VER LETRA */
+#musicas .musica-card button {
+    background: rgba(212, 175, 55, 0.9) !important;
+    color: #111 !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    transition: 0.2s !important;
+}
+
+#musicas .musica-card button:hover {
+    background: #d4af37 !important;
+    transform: scale(1.03);
+}
+
+/* CORREÇÃO DO FUNDO */
+html {
+    background: transparent !important;
+}
+
+body {
+    background-image: url("ism2.jpeg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+}
+
+main {
+    background: transparent !important;
+}
+
+
+#janela-sobre {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#conteudo-sobre {
+    background: white;
+    color: #222;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+}
+
+#conteudo-sobre > button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#redes-sociais {
+    transform: translateY(-100px) !important;
+    border: 2px solid orange !important;
+}
+
+#redes-sociais {
+    transform: translateY(-70px) !important;
+}
+
+#redes-sociais {
+    transform: translateY(-50px) !important;
+}
+
+#redes-sociais {
+    transform: translateY(calc(-50px + 3mm)) !important;
+}
+
+#janela-projetos {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#conteudo-projetos {
+    background: white;
+    color: #222;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+}
+
+#conteudo-projetos > button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+}
