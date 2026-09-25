@@ -722,13 +722,6 @@ footer p {
     text-align: center;
 }
 
-.logo-musica {
-    width: 45px;
-    height: 45px;
-    object-fit: contain;
-    margin: 0 auto 4px;
-    display: block;
-}
 
 
 /* ===== CARTÕES SUPER COMPACTOS ===== */
@@ -744,11 +737,6 @@ footer p {
     min-width: 0 !important;
 }
 
-.logo-musica {
-    width: 32px !important;
-    height: 32px !important;
-    margin-bottom: 2px !important;
-}
 
 .musica-card h3 {
     font-size: 11px !important;
@@ -813,11 +801,6 @@ footer p {
     box-sizing: border-box !important;
 }
 
-#musicas .logo-musica {
-    width: 28px !important;
-    height: 28px !important;
-    margin: 0 auto 2px !important;
-}
 
 #musicas .musica-card h3 {
     font-size: 11px !important;
@@ -878,10 +861,6 @@ footer p {
     box-sizing: border-box !important;
 }
 
-#musicas .logo-musica {
-    width: 26px !important;
-    height: 26px !important;
-}
 
 #musicas .musica-card h3 {
     font-size: 10px !important;
@@ -957,10 +936,6 @@ footer p {
     grid-template-columns: repeat(2, 1fr) !important;
 }
 
-#musicas .logo-musica {
-    width: 22px !important;
-    height: 22px !important;
-}
 
 #musicas .musica-card h3 {
     font-size: 11px !important;
@@ -1000,10 +975,6 @@ footer p {
     gap: 6px !important;
 }
 
-#musicas .logo-musica {
-    width: 18px !important;
-    height: 18px !important;
-}
 
 #musicas .musica-card h3 {
     font-size: 9px !important;
@@ -1043,10 +1014,6 @@ footer p {
     gap: 4px !important;
 }
 
-#musicas .logo-musica {
-    width: 14px !important;
-    height: 14px !important;
-}
 
 #musicas .musica-card h3 {
     font-size: 8px !important;
@@ -1146,10 +1113,6 @@ header {
     overflow: hidden !important;
 }
 
-#musicas .logo-musica {
-    width: 20px !important;
-    height: 20px !important;
-}
 
 #musicas .musica-card h3 {
     font-size: 10px !important;
@@ -1564,7 +1527,7 @@ main {
     width: 180px !important;
     box-sizing: border-box !important;
     padding: 12px !important;
-    background: #111 !important;
+    background: orange !important;
     border-radius: 8px !important;
     text-align: center !important;
 }
