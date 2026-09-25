@@ -1850,3 +1850,274 @@ main {
     font-size: 24px;
     cursor: pointer;
 }
+
+/* DIVISÃO PRINCIPAL: MÚSICAS | SIAVON SYSTEM */
+main {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 20px !important;
+}
+
+/* SIAVON - SYSTEM */
+#siavon-system {
+    grid-column: 2 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 15px !important;
+    background: rgba(0, 0, 0, 0.55) !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+}
+
+#siavon-system h2 {
+    color: #d4af37 !important;
+    font-size: 24px !important;
+    margin: 0 0 15px !important;
+}
+
+#siavon-system img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    height: auto !important;
+    max-height: 300px !important;
+    object-fit: contain !important;
+    margin: 10px auto !important;
+    border-radius: 8px !important;
+}
+
+#siavon-system h3 {
+    color: white !important;
+    font-size: 16px !important;
+    margin-top: 15px !important;
+}
+
+/* CONTATO ABAIXO DO SIAVON */
+#redes-sociais {
+    grid-column: 2 !important;
+    width: 100% !important;
+    max-width: none !important;
+    transform: none !important;
+}
+
+
+/* CONTATO ABAIXO DAS MÚSICAS, À ESQUERDA */
+#redes-sociais {
+    grid-column: 1 !important;
+    width: 180px !important;
+    max-width: 180px !important;
+    justify-self: start !important;
+    transform: none !important;
+    padding: 10px !important;
+}
+
+#redes-sociais h2 {
+    font-size: 18px !important;
+    margin: 5px 0 10px !important;
+}
+
+#redes-sociais a {
+    font-size: 14px !important;
+    display: block !important;
+    margin: 5px 0 !important;
+}
+
+
+#siavon-system img {
+    max-width: 100% !important;
+    width: 100% !important;
+    max-height: 500px !important;
+}
+
+
+#siavon-system {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+
+#siavon-system {
+    margin-top: -80px !important;
+}
+
+#siavon-system img {
+    max-width: 100% !important;
+    width: 100% !important;
+    max-height: 600px !important;
+}
+
+
+#siavon-system img {
+    transform: translate(-3cm, -2cm) !important;
+    width: calc(100% + 3cm) !important;
+    max-width: none !important;
+}
+
+
+#siavon-system img {
+    transform: translate(-3cm, -1cm) !important;
+}
+
+
+#siavon-system img {
+    transform: translate(-3cm, 0cm) !important;
+}
+
+
+#siavon-system img {
+    transform: translate(1cm, 0) !important;
+}
+
+
+#siavon-system img {
+    transform: translate(0.5cm, 0) !important;
+}
+
+
+#siavon-system img {
+    transform: translate(0.2cm, 0) !important;
+}
+
+
+#siavon-system img {
+    transform: translate(0.1cm, 0) !important;
+}
+
+
+#siavon-system img {
+    transform: translate(0.1cm, 0) !important;
+}
+
+
+/* AJUSTE FINAL DO QUADRO DE CONTATO */
+#redes-sociais {
+    grid-column: 1 !important;
+    width: 160px !important;
+    max-width: 160px !important;
+    padding: 10px !important;
+    margin: 15px 0 0 0 !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+}
+
+#redes-sociais h2 {
+    font-size: 17px !important;
+    margin: 3px 0 8px !important;
+}
+
+#redes-sociais a {
+    font-size: 13px !important;
+    margin: 4px 0 !important;
+}
+
+
+/* CONTATO NO TOPO DA COLUNA DIREITA */
+#redes-sociais {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    width: 120px !important;
+    max-width: 120px !important;
+    padding: 6px !important;
+    margin: 0 0 10px auto !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+}
+
+#redes-sociais h2 {
+    font-size: 14px !important;
+    margin: 2px 0 5px !important;
+}
+
+#redes-sociais a {
+    font-size: 11px !important;
+    margin: 3px 0 !important;
+}
+
+#siavon-system {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+}
+
+
+/* CONTATO NO CANTO SUPERIOR DIREITO DO CABEÇALHO */
+header {
+    position: relative !important;
+}
+
+header #redes-sociais {
+    position: absolute !important;
+    top: 8px !important;
+    right: 10px !important;
+    width: 115px !important;
+    max-width: 115px !important;
+    padding: 5px !important;
+    margin: 0 !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+    z-index: 20 !important;
+}
+
+header #redes-sociais h2 {
+    font-size: 13px !important;
+    margin: 2px 0 4px !important;
+}
+
+header #redes-sociais a {
+    font-size: 10px !important;
+    margin: 2px 0 !important;
+}
+
+
+header #redes-sociais {
+    top: 11px !important;
+}
+
+
+header #redes-sociais {
+    top: 17px !important;
+}
+
+
+header #redes-sociais {
+    top: 20px !important;
+}
+
+
+header #redes-sociais {
+    top: 23px !important;
+}
+
+
+#siavon-system {
+    margin-top: -120px !important;
+}
+
+
+#siavon-system {
+    margin-top: -10cm !important;
+}
+
+
+#siavon-system {
+    margin-top: -13cm !important;
+}
+
+
+/* PÁGINA PROJETOS */
+body:has(#projetos) {
+    background: #0b2a4a !important;
+}
+
+body:has(#projetos) #projetos {
+    background: transparent !important;
+}
+
+body:has(#projetos) .projeto {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #222 !important;
+}
+
+body:has(#projetos) .projeto h3 {
+    color: #0b2a4a !important;
+}
+
