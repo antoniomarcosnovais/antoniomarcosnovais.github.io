@@ -2121,3 +2121,89 @@ body:has(#projetos) .projeto h3 {
     color: #0b2a4a !important;
 }
 
+
+/* ===== AJUSTE PARA CELULAR ===== */
+@media (max-width: 600px) {
+
+    body {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    header {
+        transform: none !important;
+        width: 100% !important;
+    }
+
+    header .imagem-cabecalho,
+    header .imagem-cabecalho img {
+        width: 100% !important;
+        height: 150px !important;
+    }
+
+    header .autor {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 10px !important;
+    }
+
+    header .autor h1 {
+        font-size: 22px !important;
+    }
+
+    header nav {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 5px !important;
+    }
+
+    header nav a {
+        font-size: 13px !important;
+        padding: 5px 7px !important;
+    }
+
+    header #redes-sociais {
+        position: absolute !important;
+        top: 20px !important;
+        right: 5px !important;
+        width: 100px !important;
+        max-width: 100px !important;
+        font-size: 10px !important;
+    }
+
+    main {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 10px !important;
+    }
+
+    #musicas {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    #musicas > .musica-card {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #siavon-system {
+        width: 100% !important;
+        margin-top: 20px !important;
+        padding: 0 !important;
+    }
+
+    #siavon-system img {
+        width: 100% !important;
+        max-width: 100% !important;
+        transform: none !important;
+        margin: 0 !important;
+    }
+
+}
+
