@@ -2207,3 +2207,146 @@ body:has(#projetos) .projeto h3 {
 
 }
 
+
+/* ===== VERSÃO CELULAR ===== */
+@media (max-width: 600px) {
+
+    html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    header {
+        width: 100% !important;
+        transform: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative !important;
+    }
+
+    header .imagem-cabecalho {
+        width: 100% !important;
+        height: 150px !important;
+        overflow: hidden !important;
+    }
+
+    header .imagem-cabecalho img {
+        width: 100% !important;
+        height: 150px !important;
+        object-fit: cover !important;
+    }
+
+    header .autor {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 10px !important;
+        text-align: center !important;
+    }
+
+    header .autor h1 {
+        font-size: 20px !important;
+        line-height: 1.2 !important;
+    }
+
+    header .autor p {
+        font-size: 13px !important;
+    }
+
+    header .aviso-autoria {
+        font-size: 10px !important;
+    }
+
+    header nav {
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 4px !important;
+        padding: 8px !important;
+        box-sizing: border-box !important;
+    }
+
+    header nav a {
+        font-size: 12px !important;
+        padding: 6px 8px !important;
+    }
+
+    /* CONTATO */
+    header #redes-sociais {
+        position: static !important;
+        width: 95% !important;
+        max-width: 95% !important;
+        margin: 8px auto !important;
+        padding: 6px !important;
+        text-align: center !important;
+    }
+
+    header #redes-sociais h2 {
+        font-size: 15px !important;
+    }
+
+    header #redes-sociais a {
+        display: inline-block !important;
+        font-size: 11px !important;
+        margin: 3px 5px !important;
+    }
+
+    main {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    #inicio {
+        transform: none !important;
+        width: 100% !important;
+    }
+
+    #musicas {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        gap: 10px !important;
+    }
+
+    #musicas > .musica-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    #siavon-system {
+        width: 100% !important;
+        margin: 20px 0 0 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    #siavon-system img {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        margin: 0 auto !important;
+        transform: none !important;
+    }
+
+    footer {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        padding: 15px 8px !important;
+        font-size: 12px !important;
+    }
+}
+
