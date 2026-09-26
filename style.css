@@ -2798,3 +2798,359 @@ body:has(#projetos) .projeto h3 {
     }
 }
 
+
+
+/* CARTÕES DE MÚSICA — NOVO VISUAL */
+.musica-card {
+    background: rgba(20, 20, 20, 0.88);
+    color: white;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 18px auto;
+    max-width: 850px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.musica-card:hover {
+    transform: translateY(-3px);
+    border-color: #d4af37;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.musica-card h3 {
+    color: #d4af37;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.musica-card .autor-musica {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.musica-card audio {
+    width: 100%;
+    max-width: 700px;
+}
+
+
+/* AJUSTE FINO DOS CARTÕES */
+.musica-card {
+    padding: 16px 20px;
+}
+
+.musica-card h3 {
+    margin-top: 0;
+}
+
+.musica-card audio {
+    display: block;
+    margin: 8px auto 0;
+}
+
+@media (max-width: 700px) {
+    .musica-card {
+        margin: 14px 8px;
+        padding: 14px;
+    }
+
+    .musica-card h3 {
+        font-size: 19px;
+    }
+}
+
+
+/* TESTE — MÚSICAS EM DUAS COLUNAS */
+#musicas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+#musicas h2 {
+    grid-column: 1 / -1;
+}
+
+#musicas .musica-card {
+    width: 100%;
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    #musicas {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* TESTE DEFINITIVO — 2 COLUNAS */
+#musicas {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+}
+
+#musicas > h2 {
+    grid-column: 1 / -1 !important;
+}
+
+#musicas > .musica-card {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 700px) {
+    #musicas {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+/* AJUSTE — IMAGEM SIAVON */
+#siavon-system {
+    margin-top: -60px !important;
+}
+
+#siavon-system img {
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* SIAVON — ENCOSTAR NA BARRA DE MENU */
+#siavon-system {
+    margin-top: -180px !important;
+    padding-top: 0 !important;
+}
+
+#siavon-system img {
+    margin-top: 0 !important;
+}
+
+
+/* SIAVON — POSIÇÃO IMEDIATAMENTE APÓS O MENU */
+#siavon-system {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    position: relative !important;
+    top: -180px !important;
+}
+
+#siavon-system img {
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+
+/* CORREÇÃO DEFINITIVA — SIAVON */
+#siavon-system {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    position: relative !important;
+    top: -300px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    transform: none !important;
+}
+
+#siavon-system img {
+    display: block !important;
+    margin: 0 auto !important;
+    transform: none !important;
+}
+
+
+/* AJUSTE FINAL — SIAVON */
+#siavon-system {
+    top: -240px !important;
+}
+
+
+#siavon-system {
+    top: -180px !important;
+}
+
+
+#siavon-system {
+    top: -120px !important;
+}
+
+
+#siavon-system {
+    top: -60px !important;
+}
+
+
+#siavon-system {
+    top: -40px !important;
+}
+
+
+/* MAIS TRANSPARÊNCIA — DEIXAR ism2.jpeg APARECER */
+.musica-card {
+    background: rgba(15, 15, 15, 0.58) !important;
+}
+
+
+/* SIAVON — AUMENTAR IMAGEM */
+#siavon-system img {
+    max-height: 700px !important;
+    height: auto !important;
+}
+
+
+#siavon-system img {
+    max-height: none !important;
+    width: calc(100% + 190px) !important;
+    max-width: none !important;
+}
+
+
+#siavon-system img {
+    width: calc(100% + 130px) !important;
+}
+
+
+/* SIAVON — CORRIGIR POSIÇÃO HORIZONTAL */
+#siavon-system {
+    left: -80px !important;
+}
+
+
+/* SIAVON — VOLTAR TAMANHO NORMAL */
+#siavon-system img {
+    width: 100% !important;
+    max-width: 420px !important;
+    max-height: 700px !important;
+}
+
+#siavon-system {
+    left: auto !important;
+}
+
+
+/* SIAVON — AJUSTE FINAL */
+#siavon-system img {
+    width: 100% !important;
+    max-width: 420px !important;
+    height: calc(100% + 6cm) !important;
+    object-fit: fill !important;
+    transform: translateX(2cm) !important;
+}
+
+
+/* SIAVON — AJUSTE */
+#siavon-system img {
+    height: auto !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    transform: translate(-1cm, 6cm) !important;
+}
+
+
+/* SIAVON — CORREÇÃO SEM ALTERAR TAMANHO */
+#siavon-system {
+    top: calc(-40px + 6cm) !important;
+    left: -1cm !important;
+    transform: none !important;
+}
+
+#siavon-system img {
+    width: 100% !important;
+    max-width: 420px !important;
+    height: auto !important;
+    max-height: 700px !important;
+    transform: none !important;
+}
+
+
+#siavon-system {
+    top: calc(-40px - 8cm) !important;
+}
+
+
+#siavon-system {
+    top: calc(-40px - 4cm) !important;
+}
+
+
+#siavon-system {
+    top: calc(-40px) !important;
+}
+
+#siavon-system {
+    top: calc(-40px + 2.5cm) !important;
+    left: 2cm !important;
+}
+
+#siavon-system {
+    left: 0.5cm !important;
+}
+
+#siavon-system {
+    top: calc(-40px + 1cm) !important;
+}
+
+#siavon-system {
+    top: calc(-40px + 0.5cm) !important;
+}
+
+#siavon-system {
+    top: calc(-40px + 0.3cm) !important;
+}
+
+#siavon-system {
+    top: calc(-40px + 0.2cm) !important;
+}
+
+#siavon-system {
+    top: calc(-40px + 0.1cm) !important;
+}
+
+#siavon-system {
+    left: 1.1cm !important;
+}
+
+#siavon-system {
+    top: calc(-40px + 3.1cm) !important;
+    left: -0.9cm !important;
+}
+
+#siavon-system {
+    top: calc(-40px + 0.1cm) !important;
+}
+
+#siavon-system {
+    top: calc(-40px + 2.1cm) !important;
+}
+
+#siavon-system {
+    top: calc(-40px + 0.1cm) !important;
+}
+
+#siavon-system img {
+    height: calc(100% + 3cm) !important;
+    object-fit: fill !important;
+}
+
+#siavon-system img {
+    height: 1649px !important;
+    width: auto !important;
+}
+
+#siavon-system {
+    left: 0.4cm !important;
+}
+
+#siavon-system {
+    left: 0.8cm !important;
+}
+
+#siavon-system {
+    left: 1cm !important;
+}
