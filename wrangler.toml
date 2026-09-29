@@ -1,0 +1,6 @@
+name = "site-musicas-poesias"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "musicas-analytics"
+database_id = "4466b799c7f756f47c34a17f9ecaaba8818630d13e2c9081dfc3af9e3807835e"

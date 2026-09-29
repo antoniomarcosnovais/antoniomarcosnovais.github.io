@@ -3774,3 +3774,107 @@ a.botao-voltar:hover {
         font-size: 32px;
     }
 }
+
+/* TOP 5 - MAIS TOCADAS */
+#mais-tocada {
+    max-width: 520px;
+    margin: 14px auto 18px;
+    padding: 12px 18px;
+    background: rgba(0, 0, 0, 0.32);
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    border-radius: 10px;
+    color: #f2f2f2;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: left !important;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+}
+
+#mais-tocada strong {
+    color: #ffd700;
+}
+
+#mais-tocada br {
+    line-height: 1.8;
+}
+
+/* DESTAQUE MÁXIMO - AUTORIA */
+.letreiro-autoria {
+    background: linear-gradient(90deg, rgba(0,0,0,.75), rgba(255,215,0,.15), rgba(0,0,0,.75));
+    border-top: 2px solid #ffd700;
+    border-bottom: 2px solid #ffd700;
+    padding: 12px 0;
+    box-shadow: 0 0 18px rgba(255,215,0,.35);
+}
+
+.letreiro-autoria span {
+    color: #ffd700;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-shadow:
+        0 0 5px #ffd700,
+        0 0 12px rgba(255,215,0,.8);
+}
+
+.letreiro-autoria {
+    padding: 8px 0;
+}
+
+.letreiro-autoria span {
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.aviso-ia {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#musicas > h2 {
+    text-align: left;
+    margin-top: -10px;
+    margin-left: 20px;
+}
+
+#musicas > h2 {
+    position: relative !important;
+    left: -35px !important;
+    top: -20px !important;
+    text-align: left !important;
+    margin: 0 !important;
+}
+
+#musicas > h2 {
+    left: -15px !important;
+    top: -20px !important;
+}
+
+#musicas > h2 {
+    left: -5px !important;
+}
+
+#musicas > h2 {
+    top: -30px !important;
+}
+
+.letreiro-autoria {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.letreiro-autoria span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: correrAutoria 14s linear infinite;
+}
+
+@keyframes correrAutoria {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
