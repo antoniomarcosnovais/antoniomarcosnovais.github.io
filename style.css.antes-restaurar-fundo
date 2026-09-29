@@ -1577,7 +1577,7 @@ main {
 
 /* IMAGEM DE FUNDO DO SITE */
 body {
-    background-image: url("ism2.jpeg") !important;
+    background-image: url("sysp.jpeg") !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
@@ -1591,7 +1591,7 @@ html, body {
 }
 
 body {
-    background: url("ism2.jpeg") center center / cover fixed no-repeat !important;
+    background: url("sysp.jpeg") center center / cover fixed no-repeat !important;
 }
 
 
@@ -1626,11 +1626,11 @@ main {
 
 /* CORREÇÃO DO FUNDO */
 html {
-    background: url("ism2.jpeg") center center / cover fixed no-repeat !important;
+    background: url("sysp.jpeg") center center / cover fixed no-repeat !important;
 }
 
 body {
-    background: url("ism2.jpeg") center center / cover fixed no-repeat !important;
+    background: url("sysp.jpeg") center center / cover fixed no-repeat !important;
 }
 
 /* CAMPO PARA DIGITAR A LETRA */
@@ -1647,7 +1647,7 @@ body {
 
 /* FUNDO - NÃO ALTERAR OUTRAS ÁREAS */
 html, body {
-    background-image: url("ism2.jpeg") !important;
+    background-image: url("sysp.jpeg") !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
@@ -1758,7 +1758,7 @@ html {
 }
 
 body {
-    background-image: url("ism2.jpeg") !important;
+    background-image: url("sysp.jpeg") !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
@@ -2799,978 +2799,106 @@ body:has(#projetos) .projeto h3 {
 }
 
 
-
-/* CARTÕES DE MÚSICA — NOVO VISUAL */
-.musica-card {
-    background: rgba(20, 20, 20, 0.88);
-    color: white;
-    border: 1px solid rgba(212, 175, 55, 0.45);
-    border-radius: 12px;
-    padding: 20px;
-    margin: 18px auto;
-    max-width: 850px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.musica-card:hover {
-    transform: translateY(-3px);
-    border-color: #d4af37;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-}
-
-.musica-card h3 {
-    color: #d4af37;
-    font-size: 22px;
-    margin-bottom: 8px;
-}
-
-.musica-card .autor-musica {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 14px;
-    margin-bottom: 14px;
-}
-
-.musica-card audio {
-    width: 100%;
-    max-width: 700px;
-}
-
-
-/* AJUSTE FINO DOS CARTÕES */
-.musica-card {
-    padding: 16px 20px;
-}
-
-.musica-card h3 {
-    margin-top: 0;
-}
-
-.musica-card audio {
-    display: block;
-    margin: 8px auto 0;
-}
-
-@media (max-width: 700px) {
-    .musica-card {
-        margin: 14px 8px;
-        padding: 14px;
-    }
-
-    .musica-card h3 {
-        font-size: 19px;
-    }
-}
-
-
-/* TESTE — MÚSICAS EM DUAS COLUNAS */
-#musicas {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-}
-
-#musicas h2 {
-    grid-column: 1 / -1;
-}
-
-#musicas .musica-card {
-    width: 100%;
-    margin: 0;
-}
-
-@media (max-width: 700px) {
-    #musicas {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* TESTE DEFINITIVO — 2 COLUNAS */
-#musicas {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 20px !important;
-}
-
-#musicas > h2 {
-    grid-column: 1 / -1 !important;
-}
-
-#musicas > .musica-card {
-    width: 100% !important;
-    margin: 0 !important;
-}
-
-@media (max-width: 700px) {
-    #musicas {
-        grid-template-columns: 1fr !important;
-    }
-}
-
-
-/* AJUSTE — IMAGEM SIAVON */
-#siavon-system {
-    margin-top: -60px !important;
-}
-
-#siavon-system img {
-    display: block;
-    margin: 0 auto;
-}
-
-
-/* SIAVON — ENCOSTAR NA BARRA DE MENU */
-#siavon-system {
-    margin-top: -180px !important;
-    padding-top: 0 !important;
-}
-
-#siavon-system img {
-    margin-top: 0 !important;
-}
-
-
-/* SIAVON — POSIÇÃO IMEDIATAMENTE APÓS O MENU */
-#siavon-system {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: auto !important;
-    position: relative !important;
-    top: -180px !important;
-}
-
-#siavon-system img {
-    display: block !important;
-    margin: 0 auto !important;
-}
-
-
-/* CORREÇÃO DEFINITIVA — SIAVON */
-#siavon-system {
-    grid-column: auto !important;
-    grid-row: auto !important;
-    position: relative !important;
-    top: -300px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    transform: none !important;
-}
-
-#siavon-system img {
-    display: block !important;
-    margin: 0 auto !important;
-    transform: none !important;
-}
-
-
-/* AJUSTE FINAL — SIAVON */
-#siavon-system {
-    top: -240px !important;
-}
-
-
-#siavon-system {
-    top: -180px !important;
-}
-
-
-#siavon-system {
-    top: -120px !important;
-}
-
-
-#siavon-system {
-    top: -60px !important;
-}
-
-
-#siavon-system {
-    top: -40px !important;
-}
-
-
-/* MAIS TRANSPARÊNCIA — DEIXAR ism2.jpeg APARECER */
-.musica-card {
-    background: rgba(15, 15, 15, 0.58) !important;
-}
-
-
-/* SIAVON — AUMENTAR IMAGEM */
-#siavon-system img {
-    max-height: 700px !important;
-    height: auto !important;
-}
-
-
-#siavon-system img {
-    max-height: none !important;
-    width: calc(100% + 190px) !important;
-    max-width: none !important;
-}
-
-
-#siavon-system img {
-    width: calc(100% + 130px) !important;
-}
-
-
-/* SIAVON — CORRIGIR POSIÇÃO HORIZONTAL */
-#siavon-system {
-    left: -80px !important;
-}
-
-
-/* SIAVON — VOLTAR TAMANHO NORMAL */
-#siavon-system img {
-    width: 100% !important;
-    max-width: 420px !important;
-    max-height: 700px !important;
-}
-
-#siavon-system {
-    left: auto !important;
-}
-
-
-/* SIAVON — AJUSTE FINAL */
-#siavon-system img {
-    width: 100% !important;
-    max-width: 420px !important;
-    height: calc(100% + 6cm) !important;
-    object-fit: fill !important;
-    transform: translateX(2cm) !important;
-}
-
-
-/* SIAVON — AJUSTE */
-#siavon-system img {
-    height: auto !important;
-    width: 100% !important;
-    max-width: 420px !important;
-    transform: translate(-1cm, 6cm) !important;
-}
-
-
-/* SIAVON — CORREÇÃO SEM ALTERAR TAMANHO */
-#siavon-system {
-    top: calc(-40px + 6cm) !important;
-    left: -1cm !important;
-    transform: none !important;
-}
-
-#siavon-system img {
-    width: 100% !important;
-    max-width: 420px !important;
-    height: auto !important;
-    max-height: 700px !important;
-    transform: none !important;
-}
-
-
-#siavon-system {
-    top: calc(-40px - 8cm) !important;
-}
-
-
-#siavon-system {
-    top: calc(-40px - 4cm) !important;
-}
-
-
-#siavon-system {
-    top: calc(-40px) !important;
-}
-
-#siavon-system {
-    top: calc(-40px + 2.5cm) !important;
-    left: 2cm !important;
-}
-
-#siavon-system {
-    left: 0.5cm !important;
-}
-
-#siavon-system {
-    top: calc(-40px + 1cm) !important;
-}
-
-#siavon-system {
-    top: calc(-40px + 0.5cm) !important;
-}
-
-#siavon-system {
-    top: calc(-40px + 0.3cm) !important;
-}
-
-#siavon-system {
-    top: calc(-40px + 0.2cm) !important;
-}
-
-#siavon-system {
-    top: calc(-40px + 0.1cm) !important;
-}
-
-#siavon-system {
-    left: 1.1cm !important;
-}
-
-#siavon-system {
-    top: calc(-40px + 3.1cm) !important;
-    left: -0.9cm !important;
-}
-
-#siavon-system {
-    top: calc(-40px + 0.1cm) !important;
-}
-
-#siavon-system {
-    top: calc(-40px + 2.1cm) !important;
-}
-
-#siavon-system {
-    top: calc(-40px + 0.1cm) !important;
-}
-
-#siavon-system img {
-    height: calc(100% + 3cm) !important;
-    object-fit: fill !important;
-}
-
-#siavon-system img {
-    height: 1649px !important;
-    width: auto !important;
-}
-
-#siavon-system {
-    left: 0.4cm !important;
-}
-
-#siavon-system {
-    left: 0.8cm !important;
-}
-
-#siavon-system {
-    left: 1cm !important;
-}
-
-/* NOVO PLAYER DE MÚSICAS */
-#musicas {
-    display: block !important;
-    max-width: 900px !important;
-    width: 100% !important;
-    margin: 30px auto !important;
-}
-
-.player-musicas {
-    width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 28px !important;
-    border-radius: 20px !important;
-    background: rgba(0,0,0,.68) !important;
-    border: 1px solid rgba(255,255,255,.18) !important;
-    box-shadow: 0 15px 40px rgba(0,0,0,.40) !important;
-}
-
-.player-cabecalho {
-    display: flex !important;
-    align-items: center !important;
-    gap: 18px !important;
-    margin-bottom: 20px !important;
-}
-
-.player-icone {
-    width: 65px !important;
-    height: 65px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border-radius: 15px !important;
-    background: rgba(255,255,255,.12) !important;
-    font-size: 28px !important;
-}
-
-.player-label {
-    font-size: 11px !important;
-    letter-spacing: 2px !important;
-    opacity: .65 !important;
-}
-
-#player-titulo {
-    margin: 4px 0 !important;
-    font-size: 26px !important;
-}
-
-#player-autor {
-    margin: 0 !important;
-    opacity: .7 !important;
-}
-
-#player-audio {
-    width: 100% !important;
-    margin: 10px 0 15px !important;
-}
-
-.player-acoes {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 12px !important;
-    margin-bottom: 22px !important;
-}
-
-.player-acoes button {
-    width: 45px !important;
-    height: 40px !important;
-    border: 0 !important;
-    border-radius: 10px !important;
-    background: rgba(255,255,255,.10) !important;
-    color: inherit !important;
-    cursor: pointer !important;
-    font-size: 17px !important;
-}
-
-.playlist-titulo {
-    margin-bottom: 10px !important;
-    font-size: 12px !important;
-    letter-spacing: 2px !important;
-    opacity: .6 !important;
-}
-
-#playlist-itens {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 5px !important;
-}
-
-.playlist-item {
-    display: grid !important;
-    grid-template-columns: 35px 1fr 35px !important;
-    align-items: center !important;
-    width: 100% !important;
-    min-height: 46px !important;
-    padding: 7px 12px !important;
-    box-sizing: border-box !important;
-    border: 0 !important;
-    border-radius: 10px !important;
-    background: transparent !important;
-    color: inherit !important;
-    text-align: left !important;
-    cursor: pointer !important;
-}
-
-.playlist-item:hover,
-.playlist-item.ativo {
-    background: rgba(255,255,255,.10) !important;
-}
-
-.playlist-numero {
-    opacity: .5 !important;
-    text-align: center !important;
-}
-
-.playlist-nome {
-    font-size: 15px !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-}
-
-.playlist-play {
-    text-align: center !important;
-    opacity: .7 !important;
-}
-
-@media (max-width: 700px) {
-    .player-musicas {
-        padding: 18px !important;
-    }
-
-    #player-titulo {
-        font-size: 21px !important;
-    }
-}
-
-
-#janela-projetos {
-    background: rgba(0, 0, 0, 0.95) !important;
-}
-
-#conteudo-projetos {
+/* DUAS LATERAIS COM SYSP */
+html {
     background: #000 !important;
 }
 
-/* ACESSOS PRINCIPAIS */
-#acessos-principais {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 20px !important;
-    max-width: 900px !important;
-    margin: 35px auto !important;
+body {
+    background-image: url("sysp.jpeg"), url("sysp.jpeg") !important;
+    background-position: left top, right top !important;
+    background-size: 50% auto, 50% auto !important;
+    background-repeat: no-repeat, no-repeat !important;
+    background-attachment: fixed, fixed !important;
+    background-color: #000 !important;
 }
 
-.acesso-principal {
-    padding: 28px 20px !important;
-    text-align: center !important;
-    border-radius: 18px !important;
-    background: rgba(0, 0, 0, 0.58) !important;
-    border: 1px solid rgba(255, 255, 255, 0.16) !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.30) !important;
-    transition: transform 0.25s ease, background 0.25s ease !important;
+main {
+    background: transparent !important;
 }
 
-.acesso-principal:hover {
-    transform: translateY(-5px) !important;
-    background: rgba(0, 0, 0, 0.75) !important;
+/* FUNDO GERAL DEFINITIVO */
+html,
+body {
+    background: url("sysp.jpeg") center center / cover fixed no-repeat !important;
+    background-color: #000 !important;
 }
 
-.acesso-principal span {
-    display: block !important;
-    font-size: 38px !important;
-    margin-bottom: 10px !important;
+main {
+    background: transparent !important;
 }
 
-.acesso-principal h3 {
-    margin: 0 !important;
-    font-size: 23px !important;
+/* FUNDO GERAL - SYS3 */
+html,
+body {
+    background: url("sys3.jpeg") center center / cover fixed no-repeat !important;
+    background-color: #000 !important;
 }
 
-.acesso-principal p {
-    margin: 8px 0 0 !important;
-    opacity: 0.75 !important;
+/* CAMADA DE LEITURA SOBRE O FUNDO */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.28);
+    z-index: -1;
+    pointer-events: none;
 }
 
-@media (max-width: 700px) {
-    #acessos-principais {
-        grid-template-columns: 1fr !important;
-    }
+main,
+header,
+footer {
+    position: relative;
+    z-index: 1;
 }
 
-
-.acesso-principal {
-    background: rgba(0, 0, 0, 0.28) !important;
-    box-shadow: none !important;
-    border: 1px solid rgba(255, 255, 255, 0.20) !important;
-}
-
-.acesso-principal:hover {
-    background: rgba(0, 0, 0, 0.40) !important;
-    transform: translateY(-3px) !important;
-}
-
-
-.acesso-principal {
-    background: rgba(212, 175, 55, 0.16) !important;
-    border: 1px solid rgba(255, 215, 100, 0.45) !important;
-    box-shadow: none !important;
-}
-
-.acesso-principal:hover {
-    background: rgba(212, 175, 55, 0.28) !important;
-}
-
-.acesso-principal h3,
-.acesso-principal span {
-    color: #ffd86b !important;
-}
-
-.acesso-principal p {
-    color: #ffffff !important;
-}
-
-
-.acesso-principal {
-    background: rgba(212, 175, 55, 0.42) !important;
-}
-
-.acesso-principal:hover {
-    background: rgba(212, 175, 55, 0.55) !important;
-}
-
-
-.acesso-principal {
-    background: rgba(8, 25, 55, 0.88) !important;
-    border: 1px solid rgba(220, 185, 80, 0.75) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18) !important;
-}
-
-.acesso-principal:hover {
-    background: rgba(12, 38, 78, 0.95) !important;
-    transform: translateY(-3px) !important;
-}
-
-.acesso-principal span {
-    color: #f0c75e !important;
-}
-
-.acesso-principal h3 {
-    color: #ffffff !important;
-}
-
-.acesso-principal p {
-    color: rgba(255, 255, 255, 0.82) !important;
-}
-
-
-.acesso-principal {
-    background: rgba(0, 0, 0, 0.82) !important;
-    border: 1px solid rgba(255, 255, 255, 0.18) !important;
-    box-shadow: none !important;
-}
-
-.acesso-principal:hover {
-    background: rgba(0, 0, 0, 0.92) !important;
-}
-
-
-#poesias {
-    display: block !important;
-    width: 100% !important;
-    max-width: 900px !important;
-    margin: 30px auto !important;
-    padding: 20px !important;
-    box-sizing: border-box !important;
-}
-
-#acessos-principais {
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    width: 100% !important;
-    max-width: 900px !important;
-    margin: 30px auto !important;
-    box-sizing: border-box !important;
-}
-
-@media (max-width: 700px) {
-    #acessos-principais {
-        grid-template-columns: 1fr !important;
-    }
-}
-
-/* VISUAL DA SEÇÃO POESIAS */
-#poesias {
-    width: 100% !important;
-    max-width: 900px !important;
-    margin: 35px auto !important;
-    padding: 20px !important;
-    box-sizing: border-box !important;
-}
-
-#poesias > h2 {
-    text-align: center !important;
-    margin-bottom: 20px !important;
-    font-size: 28px !important;
-}
-
-.poesias-vazio {
-    position: relative !important;
-    text-align: center !important;
-    padding: 45px 30px !important;
-    border-radius: 20px !important;
-    background: rgba(0, 0, 0, 0.78) !important;
-    border: 1px solid rgba(255, 255, 255, 0.16) !important;
-    overflow: hidden !important;
-}
-
-.poesias-vazio::before {
-    content: "❝" !important;
-    position: absolute !important;
-    top: -18px !important;
-    left: 22px !important;
-    font-size: 90px !important;
-    opacity: 0.10 !important;
-}
-
-.poesias-vazio::after {
-    content: "❞" !important;
-    position: absolute !important;
-    bottom: -45px !important;
-    right: 22px !important;
-    font-size: 90px !important;
-    opacity: 0.10 !important;
-}
-
-.poesias-icone {
-    font-size: 46px !important;
-    margin-bottom: 12px !important;
-}
-
-.poesias-vazio h3 {
-    margin: 0 !important;
-    font-size: 26px !important;
-    color: #ffffff !important;
-}
-
-.poesias-vazio p {
-    max-width: 600px !important;
-    margin: 12px auto 0 !important;
-    color: rgba(255, 255, 255, 0.76) !important;
-    font-size: 16px !important;
-    line-height: 1.6 !important;
-}
-
-
-.botao-voltar {
-    display: inline-block !important;
-    margin: 15px 0 25px !important;
-    padding: 10px 18px !important;
-    background: #e0a72f !important;
-    color: #000 !important;
-    border-radius: 8px !important;
-    font-weight: bold !important;
-    text-decoration: none !important;
-}
-
-.botao-voltar:hover {
-    background: #f2c45c !important;
-}
-
-
-a.botao-voltar {
-    display: block !important;
-    width: fit-content !important;
-    position: relative !important;
-    z-index: 9999 !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    margin: 20px auto 30px !important;
-    padding: 12px 22px !important;
-    background: #ffffff !important;
-    color: #000000 !important;
-    border: 2px solid #ffffff !important;
-    border-radius: 8px !important;
-    font-size: 16px !important;
-    font-weight: bold !important;
-    text-decoration: none !important;
-}
-
-a.botao-voltar:hover {
-    background: #dddddd !important;
-    color: #000000 !important;
-}
-
-
-#redes-sociais {
-    background: #000000 !important;
-}
-
-#redes-sociais a {
-    background: #222222 !important;
-    color: #ffffff !important;
-}
-
-#redes-sociais a:hover {
-    background: #333333 !important;
-}
-
-
-.acesso-principal {
-    box-sizing: border-box !important;
-    min-width: 0 !important;
-    overflow: hidden !important;
-}
-
-.acesso-principal h3,
-.acesso-principal p {
-    max-width: 100% !important;
-    overflow-wrap: break-word !important;
-    word-break: normal !important;
-}
-
-
-#acessos-principais {
-    max-width: 1050px !important;
-    gap: 25px !important;
-}
-
-.acesso-principal {
-    min-width: 0 !important;
-    padding-left: 25px !important;
-    padding-right: 25px !important;
-}
-
-
-.acesso-principal h3 {
-    font-size: 17px !important;
-    white-space: nowrap !important;
-}
-
-
-#conteudo-sobre {
-    background: #000000 !important;
-    color: #ffffff !important;
-    border: 1px solid rgba(255,255,255,0.18) !important;
-}
-
-#conteudo-sobre h2,
-#conteudo-sobre h3 {
-    color: #f0c75e !important;
-}
-
-#conteudo-sobre p {
-    color: rgba(255,255,255,0.88) !important;
-}
-
-#conteudo-sobre > button {
-    color: #ffffff !important;
-}
-
-
-.player-musicas {
-    box-shadow: 0 5px 18px rgba(0,0,0,.22) !important;
-}
-
-
-#musicas {
-    max-width: 850px !important;
-}
-
-.player-musicas {
-    padding: 22px !important;
-}
-
-
-.playlist-item {
-    min-height: 38px !important;
-    padding: 5px 10px !important;
-    border-radius: 8px !important;
-}
-
-.playlist-nome {
-    font-size: 14px !important;
-}
-
-#playlist-itens {
-    gap: 3px !important;
-}
-
-
-#player-stop {
-    background: rgba(180, 40, 40, 0.28) !important;
-    border: 1px solid rgba(255, 120, 120, 0.45) !important;
-}
-
-#player-stop:hover {
-    background: rgba(200, 50, 50, 0.45) !important;
-}
-
-
-.gospel {
-    color: #ffd700;
-    font-weight: bold;
-}
-
-.playlist-item.gospel-musica .playlist-nome::after {
-    content: " (Gospel)";
-    color: #ffd700;
-    font-weight: bold;
-}
-
-/* =========================
-   AGENDA DO PASTOR
-   ========================= */
-
-.agenda-pagina {
-    width: min(1000px, 92%);
-    margin: 50px auto;
-}
-
-.agenda-cabecalho {
+/* CABEÇALHO */
+header {
     text-align: center;
-    margin-bottom: 45px;
+    padding: 25px 15px !important;
 }
 
-.agenda-cabecalho h1 {
-    margin: 0;
-    font-size: 42px;
-    letter-spacing: 2px;
+header h1 {
+    font-size: 36px !important;
+    letter-spacing: 2px !important;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.8) !important;
 }
 
-.agenda-cabecalho h2 {
-    margin: 8px 0;
-    font-size: 25px;
+header p {
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8) !important;
 }
 
-.agenda-cabecalho p {
-    margin-top: 12px;
-    opacity: 0.75;
+/* AJUSTE FINO DO CABEÇALHO */
+header {
+    padding: 15px 10px !important;
 }
 
-.agenda-evento {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    padding: 25px 30px;
-    margin-bottom: 20px;
-    border-radius: 16px;
-    background: rgba(0, 0, 0, 0.35);
-    border: 1px solid rgba(255, 215, 0, 0.25);
+header h1 {
+    font-size: 30px !important;
+    letter-spacing: 1px !important;
+    margin: 5px 0 8px !important;
 }
 
-.agenda-data {
-    min-width: 100px;
-    text-align: center;
-    padding: 15px;
-    border-right: 1px solid rgba(255, 215, 0, 0.3);
+header p {
+    font-size: 15px !important;
+    margin: 4px 0 !important;
 }
 
-.agenda-data .dia {
-    display: block;
-    font-size: 46px;
-    font-weight: bold;
-    line-height: 1;
+/* RESTAURAR CABEÇALHO ORIGINAL */
+header {
+    padding: initial !important;
+    text-align: initial !important;
 }
 
-.agenda-data .mes {
-    display: block;
-    margin-top: 8px;
-    font-size: 15px;
-    letter-spacing: 3px;
-    color: #ffd700;
-    font-weight: bold;
+header h1 {
+    font-size: initial !important;
+    letter-spacing: normal !important;
+    margin: initial !important;
+    text-shadow: none !important;
 }
 
-.agenda-info {
-    flex: 1;
-}
-
-.agenda-info h3 {
-    margin: 0 0 12px;
-    font-size: 25px;
-}
-
-.agenda-info p {
-    margin: 7px 0;
-}
-
-.agenda-tipo {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 5px 12px;
-    border-radius: 20px;
-    background: rgba(255, 215, 0, 0.15);
-    color: #ffd700;
-    font-size: 13px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-@media (max-width: 600px) {
-    .agenda-evento {
-        gap: 15px;
-        padding: 20px;
-    }
-
-    .agenda-data {
-        min-width: 70px;
-        padding-right: 15px;
-    }
-
-    .agenda-data .dia {
-        font-size: 34px;
-    }
-
-    .agenda-cabecalho h1 {
-        font-size: 32px;
-    }
+header p {
+    font-size: initial !important;
+    margin: initial !important;
+    text-shadow: none !important;
 }

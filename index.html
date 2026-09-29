@@ -23,11 +23,12 @@
     </div>
 
     <nav>
-        <a href="#inicio">Início</a>
+        <a href="index.html">Início</a>
         <a href="#musicas">Músicas</a>
         <a href="#poesias">Poesias</a>
+        <a href="https://www.youtube.com/@pastorantoniomarcosnovais" target="_blank">Mensagens</a>
         <a href="#" onclick="abrirSobre(); return false;">Sobre</a>
-        <a href="#" onclick="abrirProjetos(); return false;">Projetos</a>
+<!--         <a href="#" onclick="abrirProjetos(); return false;">Projetos</a> -->
     </nav>
 <aside id="redes-sociais">
     <h2>📞 Contato</h2>
@@ -46,202 +47,124 @@
 <section id="musicas">
     <h2>🎵 Minhas Músicas</h2>
 
-    <div class="card musica-card">
-        <h3>🎵 Amor Errado</h3>
-        <p class="autor-musica">Antônio Marcos Novais</p>
+    <div class="player-musicas">
+        <div class="player-cabecalho">
+            <div class="player-icone">🎵</div>
+            <div>
+                <div class="player-label">TOCANDO AGORA</div>
+                <h3 id="player-titulo">Amor Errado</h3>
+                <p id="player-autor">Antônio Marcos Novais</p>
+            </div>
+        </div>
 
-        <audio controls preload="metadata">
+        <audio id="player-audio" controls preload="metadata">
             <source src="musicas/amor errado.mp3" type="audio/mpeg">
             Seu navegador não suporta áudio.
         </audio>
 
+        <div class="player-acoes">
+            <button type="button" id="player-anterior">⏮</button>
+            <button type="button" id="player-stop">⏹</button>
+            <button type="button" id="player-proxima">⏭</button>
+        </div>
 
-        <div id="letra-amor-errado" class="letra-musica">
-            <h4>🎵 Amor Errado</h4>
-            <textarea placeholder="Digite ou cole aqui a letra da música..."></textarea>
+        <div class="playlist-musicas">
+            <div class="playlist-titulo">PLAYLIST</div>
+            <div id="playlist-itens"></div>
         </div>
     </div>
 
-    <div class="card musica-card">
-        <h3>🎵 Outra Pessoa (Pagode)</h3>
-        <p class="autor-musica">Antônio Marcos Novais</p>
+    <script>
+    const playlistMusicas = [
+        ["Amor Errado", "musicas/amor errado.mp3"],
+        ["Outra Pessoa (Pagode)", "musicas/Antônio Marcos Novais  - outra pessoa (pagode).mp3"],
+        ["Psiu Psiu Psiu", "musicas/Antônio Marcos Novais  - Psiu Psiu Psiu (1).mp3"],
+        ["Tenho Sede", "musicas/Antônio Marcos Novais  - Tenho sede.mp3"],
+        ["Visão Marcante", "musicas/Antônio Marcos Novais  - Visão Marcante.mp3"],
+        ["Cinzas e Vitória", "musicas/Cinzas e Vitória.mp3"],
+        ["Crise no Peito", "musicas/“Crise no Peito”.mp3"],
+        ["Ide Pregai", "musicas/ide pregai  - Antônio Marcos .mp3"],
+        ["Lembrando Você", "musicas/lembrando voce1.mp3"],
+        ["Onde Tá Você", "musicas/onde ta voce (1).mp3"],
+        ["Quero Perdão", "musicas/quero perdao (1).mp3"],
+        ["Valeu a Pena", "musicas/valeu a pena .mp3"],
+        ["Você e Eu", "musicas/voce e eu - Helena kollen.mp3"],
+        ["Ela Só Quer o Cartão", "musicas/ela só quer o cartao .mp3"],
+        ["Liga Pra Mim", "musicas/liga pra mim.mp3"],
+        ["Maranata", "musicas/Maranata.mp3"],
+        ["Onde Você Está", "musicas/onde voce esta.mp3"],
+        ["Te Esperando", "musicas/Te esperando.mp3"],
+        ["Viúva de Naim", "musicas/Viuva de Nain.mp3"],
+        ["Vou Dançar com Você", "musicas/vou dançar com você  - Antônio Marcos Novais .mp3"]
+    ];
 
-        <audio controls preload="metadata">
-            <source src="musicas/Antônio Marcos Novais  - outra pessoa (pagode).mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
+    const audio = document.getElementById("player-audio");
+    const titulo = document.getElementById("player-titulo");
+    const lista = document.getElementById("playlist-itens");
+    let atual = 0;
 
+    playlistMusicas.forEach((musica, i) => {
+        const item = document.createElement("button");
+        item.type = "button";
+        item.className = "playlist-item";
+        if ([2, 3, 5, 7, 15, 18].includes(i)) {
+            item.classList.add("gospel-musica");
+        }
+        item.innerHTML =
+            '<span class="playlist-numero">' + String(i + 1).padStart(2, "0") + '</span>' +
+            '<span class="playlist-nome">' + musica[0] + '</span>' +
+            '<span class="playlist-play">▶</span>';
 
-        <div id="letra-outra-pessoa" class="letra-musica">
-            <h4>🎵 Outra Pessoa (Pagode)</h4>
-            <textarea placeholder="Digite ou cole aqui a letra da música..."></textarea>
-        </div>
-    </div>
+        item.onclick = () => tocar(i);
+        lista.appendChild(item);
+    });
 
-    <div class="card musica-card">
-        <h3>🎵 Psiu Psiu Psiu</h3>
-        <p class="autor-musica">Antônio Marcos Novais</p>
+    function marcar() {
+        document.querySelectorAll(".playlist-item").forEach((el, i) => {
+            el.classList.toggle("ativo", i === atual);
+        });
+    }
 
-        <audio controls preload="metadata">
-            <source src="musicas/Antônio Marcos Novais  - Psiu Psiu Psiu (1).mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
+    function tocar(i) {
+        atual = (i + playlistMusicas.length) % playlistMusicas.length;
+        titulo.textContent = playlistMusicas[atual][0];
+        audio.src = playlistMusicas[atual][1];
+        audio.play();
+        marcar();
+    }
 
-    </div>
+    document.getElementById("player-anterior").onclick = () => tocar(atual - 1);
+    document.getElementById("player-stop").onclick = () => { audio.pause(); audio.currentTime = 0; };
+    document.getElementById("player-proxima").onclick = () => tocar(atual + 1);
+    audio.onended = () => tocar(atual + 1);
 
-    <div class="card musica-card">
-        <h3>🎵 Tenho Sede</h3>
-        <p class="autor-musica">Antônio Marcos Novais</p>
-
-        <audio controls preload="metadata">
-            <source src="musicas/Antônio Marcos Novais  - Tenho sede.mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
-
-    </div>
-
-    <div class="card musica-card">
-        <h3>🎵 Visão Marcante</h3>
-        <p class="autor-musica">Antônio Marcos Novais</p>
-
-        <audio controls preload="metadata">
-            <source src="musicas/Antônio Marcos Novais  - Visão Marcante.mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
-
-    </div>
-
-    <div class="card musica-card">
-        <h3>🎵 Cinzas e Vitória</h3>
-        <p class="autor-musica">Antônio Marcos Novais</p>
-
-        <audio controls preload="metadata">
-            <source src="musicas/Cinzas e Vitória.mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
-
-    </div>
-
-    <div class="card musica-card">
-        <h3>🎵 Crise no Peito</h3>
-        <p class="autor-musica">Antônio Marcos Novais</p>
-
-        <audio controls preload="metadata">
-            <source src="musicas/“Crise no Peito”.mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
-
-    </div>
-
-    <div class="card musica-card">
-        <h3>🎵 Ide Pregai</h3>
-        <p class="autor-musica">Antônio Marcos Novais</p>
-
-        <audio controls preload="metadata">
-            <source src="musicas/ide pregai  - Antônio Marcos .mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
-
-    </div>
-
-    <div class="card musica-card">
-        <h3>🎵 Lembrando Você</h3>
-        <p class="autor-musica">Antônio Marcos Novais</p>
-
-        <audio controls preload="metadata">
-            <source src="musicas/lembrando voce1.mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
-
-    </div>
-
-    <div class="card musica-card">
-        <h3>🎵 Olhos Verdes Mel</h3>
-        <p class="autor-musica">Antônio Marcos Novais</p>
-
-        <audio controls preload="metadata">
-            <source src="musicas/Olhos Verdes Mel (1).mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
-
-    </div>
-
-    <div class="card musica-card">
-        <h3>🎵 Onde Tá Você</h3>
-        <p class="autor-musica">Antônio Marcos Novais</p>
-
-        <audio controls preload="metadata">
-            <source src="musicas/onde ta voce (1).mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
-
-    </div>
-
-    <div class="card musica-card">
-        <h3>🎵 Outra (Pagode)</h3>
-        <p class="autor-musica">Antônio Marcos Novais</p>
-
-        <audio controls preload="metadata">
-            <source src="musicas/outra(pagode).mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
-
-    </div>
-
-    <div class="card musica-card">
-        <h3>🎵 Quero Perdão</h3>
-        <p class="autor-musica">Antônio Marcos Novais</p>
-
-        <audio controls preload="metadata">
-            <source src="musicas/quero perdao (1).mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
-
-    </div>
-
-
-    <div class="card musica-card">
-        <h3>🎵 Valeu a Pena</h3>
-        <p class="autor-musica">Antônio Marcos Novais</p>
-
-        <audio controls preload="metadata">
-            <source src="musicas/valeu a pena .mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
-
-    </div>
-
-    <div class="card musica-card">
-        <h3>🎵 Você e Eu</h3>
-        <p class="autor-musica">Antônio Marcos Novais</p>
-
-        <audio controls preload="metadata">
-            <source src="musicas/voce e eu - Helena kollen.mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
-
-    </div>
-
+    marcar();
+    </script>
 </section>
 
+<section id="acessos-principais">
+        <div class="acesso-principal"
+             onclick="document.getElementById('musicas').scrollIntoView({behavior:'smooth'})"
+             style="cursor:pointer;">
+            <span>🎵</span>
+            <h3>Músicas</h3>
+            <p>Ouça minhas músicas</p>
+        </div>
 
+        <div class="acesso-principal" onclick="window.location.href='poesias.html'" style="cursor:pointer;">
+            <span>✍️</span>
+            <h3>Poesias</h3>
+            <p>Leia minhas poesias</p>
+        </div>
 
-
-
-
-
-
-
-
-<aside id="siavon-system">
-    <img src="sys1.jpeg" alt="SiavoN - System">
-</aside>
-
-
-
-
-
-
+        <div class="acesso-principal"
+             onclick="window.open('https://www.youtube.com/@pastorantoniomarcosnovais', '_blank')"
+             style="cursor:pointer;">
+            <span>🎙️</span>
+            <h3>Mensagens</h3>
+            <p>Pregações e mensagens</p>
+        </div>
+    </section>
 
 
 </main>
@@ -335,18 +258,10 @@ function fecharSobre() {
 
         <h2>💻 Meus Projetos</h2>
 
-        <h3>🖥️ Sistemas para Empresas</h3>
-        <p>Desenvolvimento de sistemas personalizados para atender às necessidades de empresas e organizações.</p>
+        <a href="index.html" class="botao-voltar">← Voltar para a página principal</a>
 
-        <h3>⛪ Software para Gestão Eclesiástica</h3>
-        <p>Desenvolvimento de soluções de software voltadas para a gestão e organização de igrejas e ministérios.</p>
-
-        <h3>💾 Software em Geral</h3>
-        <p>Desenvolvimento de softwares e soluções de tecnologia de acordo com as necessidades de cada projeto.</p>
-
-        <h3>👨‍💻 Desenvolvido por Antônio Marcos Novais</h3>
-        <p>Projetos desenvolvidos com foco em tecnologia, organização e soluções práticas.</p>
-    </div>
+        <img src="sys1.jpeg" alt="SiavoN System"
+             style="display:block; width:100%; max-width:900px; height:auto; margin:20px auto; border-radius:12px;"></div>
 </div>
 
 <script>
