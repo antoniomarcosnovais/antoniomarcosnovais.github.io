@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastor Antônio Marcos Novais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="imagem-cabecalho">
+        <img src="ism1.jpeg" alt="Imagem do site">
+    </div>
+
+    <div class="autor">
+        <h1>ANTÔNIO MARCOS NOVAIS</h1>
+        <div class="aviso-autoria">
+    <div class="letreiro-autoria">
+        <span>✦ TODAS AS LETRAS SÃO DE AUTORIA DE ANTÔNIO MARCOS NOVAIS ✦</span>
+    </div>
+    <div class="aviso-ia">
+        VOZES E INSTRUMENTAIS SÃO DE INTELIGÊNCIAS ARTIFICIAIS (IA).
+    </div>
+</div>
+    </div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="agenda.html">AGENDA</a>
+        <a href="#musicas">MÚSICAS</a>
+        <a href="sermoes.html">SERMÕES</a>
+        <a href="projetos.html">PROJETOS</a>
+        <a href="#" onclick="abrirSobre(); return false;">SOBRE MIM</a>
+    </nav>
+<aside id="redes-sociais">
+    <h2>📞 Contato</h2>
+    <a href="https://wa.me/5543999171722" target="_blank">📱 WhatsApp</a>
+    <a href="mailto:amnovais@hotmail.com">📧 E-mail</a>
+    <a href="https://www.instagram.com/novais.antoniomarcos/" target="_blank">📸 Instagram</a>
+    <a href="https://www.tiktok.com/@antonio.marcos.novais" target="_blank">🎵 TikTok</a>
+    <a href="https://www.youtube.com/@pastorantoniomarcosnovais" target="_blank">▶️ YouTube</a>
+</aside>
+
+</header>
+
+<main>
+
+
+<section id="musicas">
+    <h2>🎵 Ouça aqui — Minhas Músicas</h2>
+
+    <div class="player-musicas">
+        <div class="player-cabecalho">
+            <div class="player-icone">🎵</div>
+            <div>
+                <div class="player-label">TOCANDO AGORA</div>
+                <h3 id="player-titulo">Amor Errado</h3>
+                <p id="player-autor">Antônio Marcos Novais</p>
+            </div>
+        </div>
+
+        <audio id="player-audio" controls preload="metadata">
+            <source src="musicas/amor errado.mp3" type="audio/mpeg">
+            Seu navegador não suporta áudio.
+        </audio>
+
+        <div class="player-acoes">
+            <button type="button" id="player-anterior">⏮</button>
+            <button type="button" id="player-stop">⏹</button>
+            <button type="button" id="player-proxima">⏭</button>
+        </div>
+
+        <div class="playlist-musicas">
+            <div class="playlist-titulo">PLAYLIST</div>
+            <div id="mais-tocada" style="text-align:center; margin:12px 0; font-size:15px; color:#ffd700;">
+    🎵 <strong>Mais tocada:</strong> ainda não há reproduções
+</div>
+
+<div id="playlist-itens"></div>
+        </div>
+    </div>
+
+    <script>
+    const playlistMusicas = [
+        ["Amor Errado", "musicas/amor errado.mp3"],
+        ["Outra Pessoa (Pagode)", "musicas/Antônio Marcos Novais  - outra pessoa (pagode).mp3"],
+        ["Psiu Psiu Psiu", "musicas/Antônio Marcos Novais  - Psiu Psiu Psiu (1).mp3"],
+        ["Tenho Sede", "musicas/Antônio Marcos Novais  - Tenho sede.mp3"],
+        ["Visão Marcante", "musicas/Antônio Marcos Novais  - Visão Marcante.mp3"],
+        ["Cinzas e Vitória", "musicas/Cinzas e Vitória.mp3"],
+        ["Crise no Peito", "musicas/“Crise no Peito”.mp3"],
+        ["Ide Pregai", "musicas/ide pregai  - Antônio Marcos .mp3"],
+        ["Lembrando Você", "musicas/lembrando voce1.mp3"],
+        ["Onde Tá Você", "musicas/onde ta voce (1).mp3"],
+        ["Quero Perdão", "musicas/quero perdao (1).mp3"],
+        ["Valeu a Pena", "musicas/valeu a pena .mp3"],
+        ["Você e Eu", "musicas/voce e eu - Helena kollen.mp3"],
+        ["Ela Só Quer o Cartão", "musicas/ela só quer o cartao .mp3"],
+        ["Liga Pra Mim", "musicas/liga pra mim.mp3"],
+        ["Maranata", "musicas/Maranata.mp3"],
+        ["Onde Você Está", "musicas/onde voce esta.mp3"],
+        ["Te Esperando", "musicas/Te esperando.mp3"],
+        ["Viúva de Naim", "musicas/Viuva de Nain.mp3"],
+        ["Vou Dançar com Você", "musicas/vou dançar com você  - Antônio Marcos Novais .mp3"]
+    ];
+
+    const audio = document.getElementById("player-audio");
+    const titulo = document.getElementById("player-titulo");
+    const lista = document.getElementById("playlist-itens");
+    let atual = 0;
+
+    playlistMusicas.forEach((musica, i) => {
+        const item = document.createElement("button");
+        item.type = "button";
+        item.className = "playlist-item";
+        if ([2, 3, 5, 7, 15, 18].includes(i)) {
+            item.classList.add("gospel-musica");
+        }
+        item.innerHTML =
+            '<span class="playlist-numero">' + String(i + 1).padStart(2, "0") + '</span>' +
+            '<span class="playlist-nome">' + musica[0] + '</span>' +
+            '<span class="playlist-play">▶</span>';
+
+        item.onclick = () => tocar(i);
+        lista.appendChild(item);
+    });
+
+    function marcar() {
+        document.querySelectorAll(".playlist-item").forEach((el, i) => {
+            el.classList.toggle("ativo", i === atual);
+        });
+    }
+
+    function registrarReproducao(i) {
+        const chave = "musicas_reproducoes";
+        const dados = JSON.parse(localStorage.getItem(chave) || "{}");
+        const nome = playlistMusicas[i][0];
+
+        dados[nome] = (dados[nome] || 0) + 1;
+        localStorage.setItem(chave, JSON.stringify(dados));
+
+        atualizarMaisTocada();
+    }
+
+    function atualizarMaisTocada() {
+        const dados = JSON.parse(localStorage.getItem("musicas_reproducoes") || "{}");
+        const lista = Object.entries(dados);
+
+        const elemento = document.getElementById("mais-tocada");
+        if (!elemento) return;
+
+        if (!lista.length) {
+            elemento.innerHTML = "🎵 <strong>Mais tocadas:</strong> ainda não há reproduções";
+            return;
+        }
+
+        lista.sort((a, b) => b[1] - a[1]);
+
+        elemento.innerHTML =
+            "🎵 <strong>Mais tocadas:</strong><br>" +
+            lista.slice(0, 5).map((item, i) =>
+                (i + 1) + "º — " + item[0] + " — " +
+                item[1] + " reprodução" +
+                (item[1] === 1 ? "" : "s")
+            ).join("<br>");
+    }
+
+    function tocar(i) {
+        atual = (i + playlistMusicas.length) % playlistMusicas.length;
+        titulo.textContent = playlistMusicas[atual][0];
+        audio.src = playlistMusicas[atual][1];
+        audio.play();
+        registrarReproducao(atual);
+        marcar();
+    }
+
+    document.getElementById("player-anterior").onclick = () => tocar(atual - 1);
+    document.getElementById("player-stop").onclick = () => { audio.pause(); audio.currentTime = 0; };
+    document.getElementById("player-proxima").onclick = () => tocar(atual + 1);
+    audio.onended = () => tocar(atual + 1);
+
+    marcar();
+    </script>
+</section>
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <p>Desenvolvido por Antonio Marcos Novais - @2026</p>
+</footer>
+
+
+<script>
+function mostrarLetra() {
+    const letra = document.getElementById("letra-musica");
+
+    if (letra.style.display === "block") {
+        letra.style.display = "none";
+    } else {
+        letra.style.display = "block";
+    }
+}
+</script>
+
+
+<script>
+document.getElementById("salvar-letra").addEventListener("click", function() {
+    const titulo = document.getElementById("titulo-letra").value.trim();
+    const texto = document.getElementById("texto-letra").value;
+
+    if (!titulo || !texto.trim()) {
+        alert("Digite o nome da música e a letra.");
+        return;
+    }
+
+    let letras = JSON.parse(localStorage.getItem("letrasMusicas") || "{}");
+    letras[titulo] = texto;
+    localStorage.setItem("letrasMusicas", JSON.stringify(letras));
+
+    alert("Letra salva com sucesso!");
+});
+</script>
+<div id="janela-sobre" style="display:none;">
+    <div id="conteudo-sobre">
+        <button onclick="fecharSobre()">✕</button>
+
+        <h2>Sobre Mim</h2>
+
+        <h3>Um pouco da minha história</h3>
+
+        <p>Meu nome é Antônio Marcos Novais. Sou Pastor e Missionário.</p>
+
+        <p>Minha caminhada não é apenas uma profissão ou uma formação. É, principalmente, uma história de vida que foi transformada por Deus.</p>
+
+        <p>Sou formado em Teologia e em Tecnologia da Informação (TI), e também sou Bacharel em Direito pela Universidade Positivo, em Londrina — PR. Cada uma dessas áreas fez parte da minha caminhada e contribuiu para a pessoa que sou hoje.</p>
+
+        <p>Mas, acima de tudo, existe algo que considero a minha principal missão: levar a mensagem de salvação.</p>
+
+        <p>Tenho o desejo de anunciar o Evangelho e compartilhar com outras pessoas aquilo que Deus fez na minha vida. Quero levar essa mensagem ao maior número possível de pessoas, não apenas através das palavras, mas também através do meu testemunho de vida.</p>
+
+        <p>Eu sei o que significa ter a vida transformada por Deus. Por isso, quando falo sobre Ele, falo também daquilo que vivi e daquilo que Ele continua fazendo em mim.</p>
+
+        <p>Fora das atividades do ministério, gosto muito de escrever poesias e compor músicas. Muitas vezes, as palavras e as melodias são uma forma de colocar para fora aquilo que sinto, aquilo que penso e experiências que marcaram minha vida.</p>
+
+        <h3>Por que criei este site?</h3>
+
+        <p>Criei este espaço para compartilhar um pouco de quem sou e do trabalho que realizo.</p>
+
+        <p>Aqui quero reunir minhas músicas, poesias, reflexões e mensagens, para que aquilo que escrevo e canto possa chegar a outras pessoas.</p>
+
+        <p>Talvez você tenha chegado aqui procurando uma música, uma poesia ou simplesmente por curiosidade. Mas espero que, de alguma maneira, encontre também uma mensagem de fé, esperança e transformação.</p>
+
+        <p>Porque, no final das contas, este site não é apenas sobre minhas músicas ou minhas poesias.</p>
+
+        <p>É sobre uma vida que Deus transformou e sobre o desejo de compartilhar essa transformação com outras pessoas.</p>
+    </div>
+</div>
+
+<script>
+function abrirSobre() {
+    document.getElementById("janela-sobre").style.display = "flex";
+}
+
+function fecharSobre() {
+    document.getElementById("janela-sobre").style.display = "none";
+}
+</script>
+
+
+<div id="janela-projetos" style="display:none;">
+    <div id="conteudo-projetos">
+        <button onclick="fecharProjetos()">✕</button>
+
+        <h2>💻 Meus Projetos</h2>
+
+        <a href="index.html" class="botao-voltar">← Voltar para a página principal</a>
+
+        <img src="sys1.jpeg" alt="SiavoN System"
+             style="display:block; width:100%; max-width:900px; height:auto; margin:20px auto; border-radius:12px;"></div>
+</div>
+
+<script>
+function abrirProjetos() {
+    document.getElementById("janela-projetos").style.display = "flex";
+}
+
+function fecharProjetos() {
+    document.getElementById("janela-projetos").style.display = "none";
+}
+</script>
+
+
+</body>
+</html>

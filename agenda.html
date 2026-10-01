@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Agenda — Pastor Antônio Marcos Novais</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+    background: #0b1220;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.agenda-pagina {
+    max-width: 1150px;
+    margin: 35px auto;
+    padding: 20px 30px 50px;
+}
+
+/* CABEÇALHO */
+
+.agenda-cabecalho {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.agenda-cabecalho h1 {
+    margin: 0;
+    color: #ffd700;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+.agenda-cabecalho p {
+    margin: 8px 0 0;
+    color: #ddd;
+    font-size: 15px;
+}
+
+.agenda-frase {
+    margin-top: 15px;
+    color: rgba(255,215,0,.78);
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* DUAS COLUNAS */
+
+.agenda-conteudo {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, .75fr);
+    gap: 35px;
+    align-items: start;
+}
+
+/* ESQUERDA */
+
+.agenda-mes {
+    margin-bottom: 15px;
+    color: #ffd700;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.agenda-card {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    margin-bottom: 14px;
+    background: rgba(0,0,0,.38);
+    border: 1px solid rgba(255,215,0,.25);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .25s ease;
+}
+
+.agenda-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255,215,0,.7);
+    box-shadow: 0 7px 20px rgba(0,0,0,.35);
+}
+
+.agenda-data {
+    padding: 14px 8px;
+    text-align: center;
+    background: rgba(255,215,0,.05);
+    border-right: 1px solid rgba(255,215,0,.2);
+}
+
+.agenda-data .dia {
+    display: block;
+    color: #ffd700;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.agenda-data .mes {
+    display: block;
+    margin-top: 3px;
+    color: #bbb;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.agenda-info {
+    padding: 13px 18px;
+}
+
+.agenda-dia-semana {
+    margin-bottom: 3px;
+    color: #aaa;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.agenda-info h2 {
+    margin: 0 0 5px;
+    color: #fff;
+    font-size: 17px;
+}
+
+.agenda-info p {
+    margin: 0;
+    color: #bbb;
+    font-size: 12px;
+}
+
+/* DIREITA */
+
+.agenda-lateral {
+    padding: 22px;
+    background: rgba(0,0,0,.28);
+    border: 1px solid rgba(255,215,0,.22);
+    border-radius: 12px;
+}
+
+.agenda-lateral h2 {
+    margin: 0 0 18px;
+    color: #ffd700;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.agenda-linha {
+    height: 1px;
+    margin: 14px 0;
+    background: rgba(255,215,0,.2);
+}
+
+.agenda-lateral p {
+    margin: 7px 0;
+    color: #ccc;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.agenda-globo {
+    text-align: center;
+    margin: 5px 0 18px;
+    font-size: 55px;
+    opacity: .8;
+}
+
+.agenda-whatsapp {
+    display: block;
+    margin-top: 18px;
+    padding: 10px;
+    text-align: center;
+    background: #168c4a;
+    color: #fff;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* CELULAR */
+
+@media (max-width: 800px) {
+
+    .agenda-pagina {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .agenda-conteudo {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .agenda-cabecalho h1 {
+        font-size: 25px;
+    }
+
+    .agenda-lateral {
+        order: 2;
+    }
+}
+
+.agenda-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.agenda-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,215,0,.16),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: none;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.agenda-card:hover::before {
+    animation: brilhoCartao 1.1s ease;
+}
+
+.agenda-card:hover {
+    border-color: rgba(255,215,0,.9);
+    box-shadow:
+        0 0 8px rgba(255,215,0,.25),
+        0 0 25px rgba(255,215,0,.18),
+        0 10px 28px rgba(0,0,0,.45);
+}
+
+@keyframes brilhoCartao {
+    from {
+        left: -120%;
+    }
+    to {
+        left: 150%;
+    }
+}
+
+.agenda-cabecalho h1 {
+    animation: brilhoTitulo 3s ease-in-out infinite;
+}
+
+@keyframes brilhoTitulo {
+    0%, 100% {
+        text-shadow: 0 0 4px rgba(255,215,0,.25);
+    }
+    50% {
+        text-shadow:
+            0 0 8px rgba(255,215,0,.65),
+            0 0 20px rgba(255,215,0,.35);
+    }
+}
+ .botao-home {
+    display: block;
+    width: fit-content;
+    margin: 35px auto 0;
+    padding: 11px 22px;
+    border: 1px solid rgba(255,215,0,.55);
+    border-radius: 8px;
+    color: #ffd700;
+    background: rgba(0,0,0,.35);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: .3s ease;
+}
+
+.botao-home:hover {
+    color: #0b1220;
+    background: #ffd700;
+    box-shadow: 0 0 20px rgba(255,215,0,.45);
+    transform: translateY(-2px);
+}
+
+.agenda-globo {
+    animation: pulsarGlobo 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px rgba(255,215,0,.25));
+}
+
+@keyframes pulsarGlobo {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px rgba(255,215,0,.25));
+    }
+    50% {
+        transform: scale(1.08);
+        filter:
+            drop-shadow(0 0 10px rgba(255,215,0,.55))
+            drop-shadow(0 0 22px rgba(255,215,0,.25));
+    }
+}
+
+.agenda-info h2,
+.agenda-info p,
+.agenda-dia-semana {
+    transition: .35s ease;
+}
+
+.agenda-card:hover .agenda-info h2 {
+    transform: translateX(6px);
+    color: #ffd700;
+}
+
+.agenda-card:hover .agenda-info p {
+    transform: translateX(4px);
+    color: #fff;
+}
+
+.agenda-card:hover .agenda-dia-semana {
+    color: #ffd700;
+}
+
+.agenda-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30%;
+    width: 30%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffd700,
+        transparent
+    );
+    box-shadow: 0 0 8px rgba(255,215,0,.8);
+    animation: linhaLuz 4s linear infinite;
+    z-index: 4;
+    pointer-events: none;
+}
+
+@keyframes linhaLuz {
+    0% {
+        left: -30%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.agenda-data .dia {
+    text-shadow: 0 0 6px rgba(255,215,0,.25);
+    animation: brilhoDia 2.5s ease-in-out infinite;
+}
+
+@keyframes brilhoDia {
+    0%, 100% {
+        text-shadow: 0 0 5px rgba(255,215,0,.25);
+    }
+    50% {
+        text-shadow:
+            0 0 10px rgba(255,215,0,.8),
+            0 0 22px rgba(255,215,0,.35);
+    }
+}
+
+.agenda-card {
+    animation: respirarCartao 5s ease-in-out infinite;
+}
+
+@keyframes respirarCartao {
+    0%, 100% {
+        box-shadow: 0 4px 14px rgba(0,0,0,.25);
+    }
+    50% {
+        box-shadow:
+            0 4px 18px rgba(0,0,0,.35),
+            0 0 14px rgba(255,215,0,.08);
+    }
+}
+
+.particula-cartao {
+    position: absolute;
+    bottom: 4px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #ffd700;
+    box-shadow: 0 0 8px #ffd700;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+    animation: subirParticula 4s ease-in infinite;
+}
+
+@keyframes subirParticula {
+    0% {
+        transform: translateY(0) scale(.5);
+        opacity: 0;
+    }
+    20% {
+        opacity: .8;
+    }
+    80% {
+        opacity: .35;
+    }
+    100% {
+        transform: translateY(-90px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.agenda-card {
+    background:
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(255,215,0,.10),
+            transparent 35%
+        ),
+        rgba(0,0,0,.38);
+    background-size: 180% 180%;
+    animation: luzCartao 7s ease-in-out infinite alternate;
+}
+
+@keyframes luzCartao {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.agenda-lateral {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,215,0,.10),
+            transparent 42%
+        ),
+        rgba(0,0,0,.28);
+    background-size: 160% 160%;
+    animation: movimentoLateral 8s ease-in-out infinite alternate;
+    transition: .4s ease;
+}
+
+.agenda-lateral:hover {
+    border-color: rgba(255,215,0,.65);
+    box-shadow:
+        0 0 12px rgba(255,215,0,.15),
+        0 12px 30px rgba(0,0,0,.4);
+    transform: translateY(-3px);
+}
+
+.agenda-lateral::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffd700,
+        transparent
+    );
+    box-shadow: 0 0 10px rgba(255,215,0,.8);
+    animation: brilhoLateral 5s linear infinite;
+}
+
+@keyframes movimentoLateral {
+    from {
+        background-position: 20% 0%;
+    }
+    to {
+        background-position: 80% 100%;
+    }
+}
+
+@keyframes brilhoLateral {
+    from {
+        left: -60%;
+    }
+    to {
+        left: 120%;
+    }
+}
+
+.agenda-lateral h2 {
+    position: relative;
+    transition: .35s ease;
+    text-shadow: 0 0 4px rgba(255,215,0,.2);
+}
+
+.agenda-lateral h2::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    margin-top: 7px;
+    background: #ffd700;
+    box-shadow: 0 0 8px rgba(255,215,0,.7);
+    transition: width .45s ease;
+}
+
+.agenda-lateral:hover h2::after {
+    width: 65px;
+}
+
+.agenda-lateral:hover h2 {
+    text-shadow:
+        0 0 7px rgba(255,215,0,.55),
+        0 0 16px rgba(255,215,0,.2);
+}
+</style>
+</head>
+
+<body>
+<canvas id="efeitoVisual"></canvas>
+
+<style>
+#efeitoVisual {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.agenda-pagina {
+    position: relative;
+    z-index: 1;
+}
+
+.agenda-pagina::before {
+    content: "";
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    left: -180px;
+    top: 15%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,215,0,.12), transparent 68%);
+    filter: blur(20px);
+    pointer-events: none;
+    animation: luzFlutuante 8s ease-in-out infinite alternate;
+}
+
+.agenda-pagina::after {
+    content: "";
+    position: fixed;
+    width: 380px;
+    height: 380px;
+    right: -160px;
+    bottom: 5%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,130,255,.10), transparent 68%);
+    filter: blur(25px);
+    pointer-events: none;
+    animation: luzFlutuante2 10s ease-in-out infinite alternate;
+}
+
+@keyframes luzFlutuante {
+    from { transform: translate(0,0); opacity:.6; }
+    to { transform: translate(100px,40px); opacity:1; }
+}
+
+@keyframes luzFlutuante2 {
+    from { transform: translate(0,0); opacity:.5; }
+    to { transform: translate(-80px,-50px); opacity:1; }
+}
+</style>
+
+<div class="agenda-pagina">
+
+    <header class="agenda-cabecalho">
+        <h1>AGENDA DO PASTOR</h1>
+        <p>Pastor Antônio Marcos Novais</p>
+
+        <div class="agenda-frase">
+            “Ide e pregai o Evangelho a toda a criatura.” — Marcos 16:15
+        </div>
+    </header>
+
+    <div class="agenda-conteudo">
+
+        <main>
+
+            <div class="agenda-mes">
+                OUTUBRO 2026
+            </div>
+
+            <div class="agenda-card">
+
+                <div class="agenda-data">
+                    <span class="dia">15</span>
+                    <span class="mes">OUT</span>
+                </div>
+
+                <div class="agenda-info">
+                    <div class="agenda-dia-semana">
+                        QUINTA-FEIRA
+                    </div>
+
+                    <h2>Culto de Celebração</h2>
+
+                    <p>
+                        19:30 &nbsp;•&nbsp; Londrina - PR
+                    </p>
+                </div>
+
+            </div>
+
+        </main>
+
+        <aside class="agenda-lateral">
+
+            <div class="agenda-globo">🌍</div>
+
+            <h2>PRÓXIMOS COMPROMISSOS</h2>
+
+            <p>
+                Os próximos compromissos do Pastor
+                serão apresentados nesta área.
+            </p>
+
+            <div class="agenda-linha"></div>
+
+            <h2>AGENDAMENTOS</h2>
+
+            <p>
+                Convites para cultos, congressos,
+                conferências e eventos.
+            </p>
+
+            <a href="#" class="agenda-whatsapp">
+                WHATSAPP PARA AGENDAMENTOS
+            </a>
+
+        </aside>
+
+    </div>
+
+    <a href="index.html" class="botao-home">← VOLTAR PARA HOME</a>
+
+</div>
+
+
+<script>
+const cartao = document.querySelector(".agenda-card");
+
+if (cartao) {
+    for (let i = 0; i < 8; i++) {
+        const brilho = document.createElement("span");
+        brilho.className = "particula-cartao";
+        brilho.style.left = (10 + Math.random() * 80) + "%";
+        brilho.style.animationDelay = (Math.random() * 4) + "s";
+        cartao.appendChild(brilho);
+    }
+}
+</script>
+
+</body>
+</html>
+
+
+<script>
+const canvas = document.getElementById("efeitoVisual");
+const ctx = canvas.getContext("2d");
+
+let pontos = [];
+
+function ajustarCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    pontos = Array.from({length: 55}, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.8 + .4,
+        vx: (Math.random() - .5) * .18,
+        vy: (Math.random() - .5) * .18,
+        brilho: Math.random() * Math.PI * 2
+    }));
+}
+
+function animar() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    pontos.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.brilho += .025;
+
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+
+        const alpha = .25 + (Math.sin(p.brilho) + 1) * .22;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,215,0,${alpha})`;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = "rgba(255,215,0,.7)";
+        ctx.fill();
+    });
+
+    requestAnimationFrame(animar);
+}
+
+window.addEventListener("resize", ajustarCanvas);
+
+ajustarCanvas();
+animar();
+</script>
